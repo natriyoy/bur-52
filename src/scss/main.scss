@@ -12,7 +12,41 @@
 // ==== 4. Components ====
 @use 'components/button';
 @use 'components/card';
+@font-face {
+  font-family: 'Unageo';
+  src: url('../assets/fonts/Unageo-Light.ttf');
+}
 
-body {
-  background-color: var(--main-color);
+
+:root {
+  //--dark: #2A2A2A;
+  --lazur: #2764AE;
+  --gagat: #3C3C3B;
+  --gagat2: rgba(60, 60, 59, 0.2);
+}
+nav {
+  font-size: 1rem;
+  font-family: 'Unageo';
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    text-decoration: none;
+    li {
+      cursor: pointer;
+      transition: 0.4s;
+      padding: 10px;
+      border-radius: 20px;
+      &:hover {
+        color: var(--lazur);
+        background-color: var(--gagat2);
+      }
+    }
+  }
+  .info {
+    color: var(--lazur);
+  }
 }

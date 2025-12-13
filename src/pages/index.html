@@ -9,21 +9,159 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Карточки</h1>
+<header>
+    <nav>
+        <div>ЛОГО</div>
+        <ul>
+            <li>Главная</li>
+            <li>Услуги</li>
+            <li>Калькулятор</li>
+            <li>О нас</li>
+            <li>Контакты</li>
+            <li>Фотогалерея</li>
+        </ul>
+        <ul>
+            <li class="info">8 (920) 052-19-82</li>
+            <li class="info">nn.glazunov@yandex.ru</li>
+        </ul>
+        <div>Тема</div>
+    </nav>
+</header>
+<img src="./assets/images/cat1.webp">
+<section id="home" class="hero">
+    <div class="hero-overlay"></div> <!-- Затемняющий оверлей для лучшей читаемости текста -->
+    <div class="hero-content">
+        <h1>Профессиональное бурение скважин на воду в Нижегородской области</h1>
+        <p>Надежно, быстро, с гарантией. Опыт с 2008 года.</p>
+        <p>Работаем в районах: Ковернинский, Городецкий, Чкаловский, Воскресенский, Борский, Семеновский.</p>
+        <div class="cta-buttons">
+            <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
+            <a href="#contact" class="btn btn-secondary">Оставить заявку</a>
+            <a href="tel:89200521982" class="btn btn-secondary">Позвонить</a>
+        </div>
+    </div>
+</section>
 
-@@include('../components/_card.html', {
-"img": "./assets/images/cat1",
-"alt": "Изображение 1",
-"title": "Заголовок 1",
-"text": "Текст описания карточки 1"
-})
+<style>
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        background-image: url('./assets/images/P1100039.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Параллакс эффект */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+    }
 
-@@include('../components/_card.html', {
-"img": "./assets/images/cat1",
-"alt": "Изображение 2",
-"title": "Заголовок 2",
-"text": "Текст описания карточки 2"
-})
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)); /* Градиент для улучшения читаемости */
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        line-height: 1.5;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-align: center;
+        min-width: 200px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: 2px solid #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .hero {
+            background-attachment: scroll; /* На мобильных отключаем fixed */
+        }
+    }
+</style>
+
+
 
 </body>
 </html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Бур-52 - Бурение скважин на воду в Нижегородской области</title>
+    <style>
+        /* --- Основные переменные для тем --- */
+        :root {
+            /* Светлая тема по умолчанию */
+            --bg-color: #FFFFFF;
+            --text-color: #4B5563;
+            --header-color: #1E3A8A;
+            --accent-color: #0891B2;
+            --card-bg: #F9FAFB;
+            --border-color: #E5E7EB;
+            --button-bg: #0891B2;
+            --button-text: #FFFFFF;
+            --button-hover-bg: #06B6D4;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #111827;
+            --text-color: #E5E7EB;
+            --header-color: #D1D5DB;
+            --accent-color: #06B6D4;
+            --card-bg: #1F2937;
+            --border-color: #374151;
+            --button-bg: #06B6D4;
+            --button-text: #1F2937;
+            --button-hover-bg: #0891B2;
+        }
+
+        /* --- Сброс стилей --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            line-height: 1.6;
+        }
+
+        /* --- Шапка --- */
+        header {
+            background-color: var(--card-bg);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--header-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-left: 1rem;
+        }
+
+        /* --- Секция Hero --- */
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x600/cccccc/969696?text=Фоновое+изображение') no-repeat center center/cover;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--button-hover-bg);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--header-color);
+        }
+
+        /* --- Общие стили для секций --- */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--header-color);
+        }
+
+        /* --- Секция Услуги --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Карточки в ряд на десктопе, в столбик на мобильных */
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Секция Этапы --- */
+        .steps-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .step-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .step-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        /* --- Секция Калькулятор --- */
+        .calculator {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .calculator input, .calculator select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .calculator-result {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* --- Секция О нас --- */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        /* --- Секция Контакты --- */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-info-details {
+            max-width: 400px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+        }
+
+        /* --- Подвал --- */
+        footer {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* --- Адаптивность --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .calculator, .contact-form, .contact-info-details {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Бур-52</div>
+    <nav>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#steps">Этапы работы</a></li>
+            <li><a href="#calculator">Калькулятор</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="contact-info">
+        <a href="tel:89200521982">8 (920) 052-19-82</a>
+        <a href="mailto:nn.glazunov@yandex.ru">nn.glazunov@yandex.ru</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">🌙</button>
+</header>
+
+
+<section id="home" class="hero">
+    <h1>Профессиональное бурение скважин на воду в Нижегородской области</h1>
+    <p>Надежно, быстро, с гарантией. Опыт с 2008 года.</p>
+    <p>Работаем в районах: Ковернинский, Городецкий, Чкаловский, Воскресенский, Борский, Семеновский.</p>
+    <div class="cta-buttons">
+        <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
+        <a href="#contact" class="btn btn-secondary">Оставить заявку</a>
+        <a href="tel:89200521982" class="btn btn-secondary">Позвонить</a>
+    </div>
+</section>
+
+
+<section id="services">
+    <h2 class="section-title">Наши услуги</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Бурение скважин на воду</h3>
+            <p>Скважины для частного и коммерческого использования. Используем современное оборудование.</p>
+        </div>
+        <div class="service-card">
+            <h3>Монтаж насосного оборудования</h3>
+            <p>Профессиональная установка и подключение насосов для скважин различных типов.</p>
+        </div>
+        <div class="service-card">
+            <h3>Чистка и ремонт скважин</h3>
+            <p>Восстановление дебита, очистка скважин от песка и других загрязнений.</p>
+        </div>
+        <div class="service-card">
+            <h3>Обустройство скважины</h3>
+            <p>Установка оголовка, адаптера, обвязка, монтаж кессона или колодца.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="steps">
+    <h2 class="section-title">Как мы работаем</h2>
+    <ol class="steps-list">
+        <li class="step-item">
+            <span class="step-number">1</span>
+            <strong>Заявка/Консультация:</strong> Клиент оставляет заявку или звонит. Мы консультируем и обсуждаем детали.
+        </li>
+        <li class="step-item">
+            <span class="step-number">2</span>
+            <strong>Выезд на участок:</strong> Осмотр местности, обсуждение расположения скважины, подъезда для техники.
+        </li>
+        <li class="step-item">
+            <span class="step-number">3</span>
+            <strong>Бурение:</strong> Использование современной техники для бурения скважины на необходимую глубину.
+        </li>
+        <li class="step-item">
+            <span class="step-number">4</span>
+            <strong>Обустройство:</strong> Установка обсадной трубы, прокачка скважины, замер дебита.
+        </li>
+        <li class="step-item">
+            <span class="step-number">5</span>
+            <strong>Сдача работ:</strong> Передача скважины клиенту, предоставление гарантии.
+        </li>
+    </ol>
+</section>
+
+
+<section id="calculator">
+    <h2 class="section-title">Рассчитайте стоимость скважины</h2>
+    <div class="calculator">
+        <label for="depth">Глубина скважины (в метрах):</label>
+        <input type="number" id="depth" placeholder="Введите глубину" min="10" max="200" value="50">
+
+        <label for="diameter">Диаметр обсадной трубы:</label>
+        <select id="diameter">
+            <option value="125">125 мм</option>
+            <option value="150">150 мм</option>
+        </select>
+
+        <label for="additional">Дополнительные услуги (необязательно):</label>
+        <input type="text" id="additional" placeholder="Например: монтаж насоса, чистка">
+
+        <button id="calculateBtn" class="btn btn-primary">Рассчитать</button>
+
+        <div id="result" class="calculator-result">
+            
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-color);"><em>Важно: Уточнение стоимости после выезда специалиста.</em></p>
+    </div>
+</section>
+
+
+<section id="about">
+    <h2 class="section-title">О компании «Бур-52»</h2>
+    <div class="about-content">
+        <p>Компания «Бур-52» успешно работает в сфере бурения скважин на воду с 2008 года, обладая значительным опытом. Мы специализируемся на бурении скважин для частных и коммерческих нужд в Нижегородской области.</p>
+        <p>Наша команда состоит из квалифицированных специалистов, использующих современное оборудование. Мы гарантируем высокое качество работ и соблюдение всех технологических процессов. Надежность, профессионализм и долгосрочные гарантии — основа нашей работы.</p>
+        
+    </div>
+</section>
+
+
+<section id="contact">
+    <h2 class="section-title">Контакты</h2>
+    <div class="contact-container">
+        <div class="contact-info-details">
+            <h3>ИП Глазунов</h3>
+            <p><strong>Адрес:</strong> Нижегородская область, Городецкий район, село Зарубино</p>
+            <p><strong>Телефон:</strong> <a href="tel:89200521982">8 (920) 052-19-82</a></p>
+            <p><strong>Email:</strong> <a href="mailto:nn.glazunov@yandex.ru">nn.glazunov@yandex.ru</a></p>
+            <p><strong>Районы работы:</strong> Ковернинский, Городецкий, Чкаловский, Воскресенский, Борский, Семеновский.</p>
+        </div>
+        <div class="contact-form">
+            <h3>Оставить заявку</h3>
+            <form id="requestForm">
+                <input type="text" id="name" placeholder="Ваше имя" required>
+                <input type="tel" id="phone" placeholder="Ваш телефон" required>
+                <input type="email" id="email" placeholder="Ваш email (необязательно)">
+                <textarea id="message" placeholder="Введите сообщение (например, 'Интересует бурение скважины на участке по адресу...' или 'Нужна консультация')" required></textarea>
+                <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Бур-52. Все права защищены.</p>
+        
+    </div>
+</footer>
+
+<script>
+    // --- Переключение темы ---
+    const themeToggle = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '☀️'; // Показать иконку солнца, если тема темная
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const currentDataTheme = document.documentElement.getAttribute('data-theme');
+        let newTheme = 'light';
+
+        if (currentDataTheme === 'dark') {
+            // Если текущая тема темная, переключаем на светлую
+            document.documentElement.removeAttribute('data-theme');
+            themeToggle.textContent = '🌙'; // Показать иконку луны
+        } else {
+            // Если текущая тема светлая, переключаем на темную
+            document.documentElement.setAttribute('data-theme', 'dark');
+            newTheme = 'dark';
+            themeToggle.textContent = '☀️'; // Показать иконку солнца
+        }
+        // Сохраняем выбранную тему в localStorage
+        localStorage.setItem('theme', newTheme);
+    });
+
+    // --- Калькулятор стоимости ---
+    document.getElementById('calculateBtn').addEventListener('click', function() {
+        const depth = parseFloat(document.getElementById('depth').value) || 0;
+        const diameter = document.getElementById('diameter').value;
+        const additional = document.getElementById('additional').value;
+
+        // Простая формула для расчета (можно изменить)
+        let baseCost = depth * 1500; // 1500 руб за метр
+        if (diameter === "150") {
+            baseCost *= 1.1; // На 10% дороже за 150мм
+        }
+        if (additional) {
+            baseCost += 5000; // Условная надбавка за доп. услуги
+        }
+
+        document.getElementById('result').textContent = `Примерная стоимость: ${baseCost.toFixed(0)} руб.`;
+    });
+
+    // --- Отправка формы заявки ---
+    document.getElementById('requestForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Предотвращаем стандартную отправку формы
+
+        // Получаем данные из формы
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Простой пример отправки данных (в реальном проекте нужно настроить backend)
+        // Здесь мы просто выводим сообщение и сбрасываем форму
+        alert(`Заявка отправлена!\nИмя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nСообщение: ${message}\n\n(В реальном сайте заявка будет отправлена на сервер для обработки, например, в Telegram-бот, CRM или Google-таблицу.)`);
+
+        // Сброс формы
+        this.reset();
+    });
+
+</script>
+</body>
+</html>
