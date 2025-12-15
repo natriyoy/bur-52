@@ -12,41 +12,41 @@
 // ==== 4. Components ====
 @use 'components/button';
 @use 'components/card';
+@use 'components/hero_banner';
+@use 'components/header';
+@use 'components/our_services';
+@use 'components/services';
+@use 'components/services_prise';
+@use 'components/stages';
+@use 'components/form';
+
 @font-face {
   font-family: 'Unageo';
   src: url('../assets/fonts/Unageo-Light.ttf');
 }
 
-
 :root {
-  //--dark: #2A2A2A;
   --lazur: #2764AE;
   --gagat: #3C3C3B;
   --gagat2: rgba(60, 60, 59, 0.2);
+
+  // Переменные для темы
+  --bg-color: #ffffff;
+  --text-color: var(--gagat);
+  --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  &.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
 }
-nav {
-  font-size: 1rem;
+
+body {
+  margin: 0;
+  padding: 0;
   font-family: 'Unageo';
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    text-decoration: none;
-    li {
-      cursor: pointer;
-      transition: 0.4s;
-      padding: 10px;
-      border-radius: 20px;
-      &:hover {
-        color: var(--lazur);
-        background-color: var(--gagat2);
-      }
-    }
-  }
-  .info {
-    color: var(--lazur);
-  }
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }

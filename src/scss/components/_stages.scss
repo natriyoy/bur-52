@@ -1,0 +1,301 @@
+.stages-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    .section-subtitle {
+      display: inline-block;
+      font-size: 1rem;
+      color: var(--lazur);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 2px;
+        background-color: var(--lazur);
+      }
+    }
+
+    .section-title {
+      font-family: 'Unageo', sans-serif;
+      font-size: 2.5rem;
+      color: var(--gagat);
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .section-description {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .stages-timeline {
+    max-width: 900px;
+    margin: 0 auto 50px;
+  }
+
+  .stage-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+    padding: 25px 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(60, 60, 59, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateX(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      border-color: rgba(39, 100, 174, 0.2);
+    }
+
+    &__number {
+      font-family: 'Unageo', sans-serif;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: var(--lazur);
+      min-width: 60px;
+      margin-right: 25px;
+      line-height: 1;
+    }
+
+    &__content {
+      flex-grow: 1;
+      margin-right: 25px;
+    }
+
+    &__title {
+      font-family: 'Unageo', sans-serif;
+      font-size: 1.4rem;
+      color: var(--gagat);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    &__description {
+      color: #666;
+      line-height: 1.6;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background-color: rgba(39, 100, 174, 0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+
+      svg {
+        display: block;
+      }
+    }
+
+    &:hover &__icon {
+      background-color: var(--lazur);
+      transform: scale(1.1);
+
+      path {
+        fill: white;
+      }
+    }
+
+    // Соединительные линии для десктопа
+    @media (min-width: 769px) {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 85px;
+        bottom: -40px;
+        width: 2px;
+        height: 40px;
+        background-color: var(--lazur);
+        opacity: 0.3;
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+
+  .stages-footer {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(60, 60, 59, 0.1);
+
+    .stages-cta {
+      display: inline-block;
+      padding: 16px 32px;
+      background-color: var(--lazur);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      border: 2px solid var(--lazur);
+
+      &:hover {
+        background-color: transparent;
+        color: var(--lazur);
+      }
+    }
+  }
+
+  /* Адаптивность - планшеты */
+  @media (max-width: 1024px) {
+    .stage-item {
+      padding: 20px 25px;
+
+      &__number {
+        font-size: 2rem;
+        min-width: 50px;
+        margin-right: 20px;
+      }
+
+      &__title {
+        font-size: 1.3rem;
+      }
+
+      &__description {
+        font-size: 0.95rem;
+      }
+
+      &__icon {
+        width: 50px;
+        height: 50px;
+
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  /* Адаптивность - мобильные */
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+
+    .section-header {
+      margin-bottom: 40px;
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .section-description {
+        font-size: 1rem;
+      }
+    }
+
+    .stage-item {
+      flex-direction: column;
+      padding: 25px;
+      margin-bottom: 30px;
+
+      &__number {
+        font-size: 1.8rem;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+
+      &__content {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      &__title {
+        font-size: 1.3rem;
+      }
+
+      &__description {
+        font-size: 0.95rem;
+      }
+
+      &__icon {
+        align-self: flex-start;
+        width: 50px;
+        height: 50px;
+
+        svg {
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      // Убираем линии на мобильных
+      &::after {
+        display: none;
+      }
+    }
+
+    .stages-footer {
+      .stages-cta {
+        padding: 14px 28px;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  /* Адаптивность - маленькие телефоны */
+  @media (max-width: 480px) {
+    padding: 40px 15px;
+
+    .section-header {
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .section-subtitle {
+        font-size: 0.9rem;
+      }
+    }
+
+    .stage-item {
+      padding: 20px;
+
+      &__number {
+        font-size: 1.6rem;
+      }
+
+      &__title {
+        font-size: 1.2rem;
+      }
+
+      &__description {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
