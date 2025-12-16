@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+    <style>
+        .about-page {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Заголовок страницы */
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-header__subtitle {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--lazur);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding: 6px 18px;
+            background-color: rgba(39, 100, 174, 0.1);
+            border-radius: 20px;
+        }
+
+        .page-header__title {
+            font-family: 'Unageo', sans-serif;
+            font-size: 2.5rem;
+            color: var(--gagat);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .page-header__description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Основной контент */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .about-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(38, 70, 83, 0.08);
+            border: 1px solid var(--gagat2);
+        }
+
+        .about-section__title {
+            font-family: 'Unageo', sans-serif;
+            font-size: 1.8rem;
+            color: var(--gagat);
+            margin-bottom: 25px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-section__title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--lazur);
+        }
+
+        .about-section__content {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--gagat);
+        }
+
+        .about-section__content p {
+            margin-bottom: 20px;
+        }
+
+        .about-section__content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Преимущества в виде значков */
+        .advantages-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .advantage-card {
+            flex: 1;
+            min-width: 200px;
+            background: rgba(39, 100, 174, 0.03);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid var(--gagat2);
+            transition: all 0.3s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(39, 100, 174, 0.1);
+            border-color: var(--lazur);
+        }
+
+        .advantage-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--lazur);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .advantage-title {
+            font-family: 'Unageo', sans-serif;
+            font-size: 1.2rem;
+            color: var(--gagat);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .advantage-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* География работ */
+        .regions-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .region-badge {
+            background: var(--lazur);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .region-badge:hover {
+            background: var(--gagat);
+            transform: translateY(-2px);
+        }
+
+        /* Контактная информация */
+        .contact-info {
+            background: linear-gradient(135deg, rgba(39, 100, 174, 0.05) 0%, rgba(39, 100, 174, 0.02) 100%);
+            border-radius: 16px;
+            padding: 40px;
+            border: 2px solid rgba(39, 100, 174, 0.1);
+        }
+
+        .contact-info__title {
+            font-family: 'Unageo', sans-serif;
+            font-size: 1.8rem;
+            color: var(--gagat);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-details__item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--gagat2);
+        }
+
+        .contact-details__item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-details__icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            color: var(--lazur);
+            font-size: 1.2rem;
+        }
+
+        .contact-details__content h4 {
+            font-family: 'Unageo', sans-serif;
+            font-size: 1.1rem;
+            color: var(--gagat);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .contact-details__content p {
+            color: var(--gagat);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .contact-details__link {
+            color: var(--lazur);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-details__link:hover {
+            text-decoration: underline;
+            color: var(--gagat);
+        }
+
+        /* Кнопка CTA */
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--lazur) 0%, #1a4a8a 100%);
+            border-radius: 20px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .cta-title {
+            font-family: 'Unageo', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 16px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-family: 'Unageo', sans-serif;
+        }
+
+        .cta-btn.primary {
+            background-color: white;
+            color: var(--lazur);
+        }
+
+        .cta-btn.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Адаптивность */
+        max-width: 992px {
+
+                          .about-page {
+                              padding: 50px 0;
+                          }
+
+                          .page-header__title {
+                              font-size: 2.2rem;
+                          }
+
+                          .about-section {
+                              padding: 35px 30px;
+                          }
+                      }
+
+        max-width: 768px {
+                          .about-page {
+                              padding: 40px 0;
+                          }
+
+                          .page-header {
+                              margin-bottom: 40px;
+                          }
+
+                          .page-header__title {
+                              font-size: 2rem;
+                          }
+
+                          .page-header__description {
+                              font-size: 1rem;
+                          }
+
+                          .about-content {
+                              gap: 40px;
+                          }
+
+                          .about-section {
+                              padding: 30px 25px;
+                          }
+
+                          .about-section__title {
+                              font-size: 1.6rem;
+                          }
+
+                          .advantage-card {
+                              min-width: 100%;
+                          }
+
+                          .regions-list {
+                              justify-content: center;
+                          }
+
+                          .contact-info {
+                              padding: 30px 25px;
+                          }
+
+                          .cta-section {
+                              padding: 50px 25px;
+                          }
+
+                          .cta-title {
+                              font-size: 2rem;
+                          }
+
+                          .cta-buttons {
+                              flex-direction: column;
+                              gap: 15px;
+                          }
+                      }
+
+        max-width: 576px {
+                          .about-page {
+                              padding: 30px 0;
+                          }
+
+                          .page-header__title {
+                              font-size: 1.8rem;
+                          }
+
+                          .page-header__subtitle {
+                              font-size: 0.85rem;
+                              padding: 5px 15px;
+                          }
+
+                          .about-section {
+                              padding: 25px 20px;
+                          }
+
+                          .about-section__title {
+                              font-size: 1.4rem;
+                          }
+
+                          .contact-details__item {
+                              flex-direction: column;
+                          }
+
+                          .contact-details__icon {
+                              margin-bottom: 10px;
+                          }
+
+                          .cta-title {
+                              font-size: 1.8rem;
+                          }
+
+                          .cta-btn {
+                              padding: 14px 25px;
+                              font-size: 1rem;
+                          }
+                      }
+
+        max-width: 400px {
+                          .region-badge {
+                              padding: 8px 16px;
+                              font-size: 0.9rem;
+                          }
+
+                          .cta-title {
+                              font-size: 1.6rem;
+                          }
+                      }
+    </style>
+    <header>
+  <nav class="nav">
+    
+    <div class="log">
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <svg width="150px" id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 191.26 55.38">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #3c3c3b;
+            }
+
+            .cls-2 {
+              fill: #2764ae;
+            }
+          </style>
+        </defs>
+        <g id="_Слой_1-2" data-name="Слой 1">
+          <g>
+            <g>
+              <path class="cls-1" d="M81.18,13.38v3.86h-12.72v6.76h6.24c2.42,0,4.48.86,6.2,2.58.86.83,1.5,1.77,1.93,2.82.43,1.05.64,2.17.64,3.38,0,2.42-.86,4.48-2.58,6.2-1.72,1.72-3.79,2.58-6.2,2.58h-10.11V13.38h16.59ZM68.46,37.66h6.24c1.34,0,2.5-.47,3.46-1.41.94-.97,1.41-2.12,1.41-3.46s-.47-2.5-1.41-3.46c-.97-.94-2.12-1.41-3.46-1.41h-6.24v9.74Z"/>
+              <path class="cls-1" d="M90.72,13.38l6.76,14.37,7.01-14.37h4.35l-12.12,24.6c-.29.62-.66,1.18-1.11,1.67-.44.5-.96.93-1.55,1.31-1.15.72-2.46,1.09-3.91,1.09h-.89v-3.91h.89c.72,0,1.34-.16,1.85-.48.56-.35.99-.82,1.29-1.41l1.93-4.07-8.78-18.8h4.27Z"/>
+              <path class="cls-1" d="M122.73,13.38c2.52,0,4.67.88,6.44,2.66,1.77,1.77,2.66,3.92,2.66,6.44,0,1.26-.22,2.43-.64,3.5-.43,1.07-1.1,2.05-2.01,2.94-1.77,1.8-3.92,2.7-6.44,2.7h-5.92v9.95h-3.87V13.38h9.78ZM116.82,27.71h5.92c1.42,0,2.66-.52,3.7-1.57,1.02-1.02,1.53-2.24,1.53-3.67s-.51-2.62-1.53-3.66c-1.05-1.02-2.28-1.53-3.7-1.53h-5.92v10.43Z"/>
+              <path class="cls-1" d="M135.22,27.63h12.89v3.87h-12.89v-3.87Z"/>
+              <path class="cls-1" d="M168.88,13.38v3.91h-10.43v6.24h2.94c2.47.03,4.6.95,6.4,2.78,1.77,1.85,2.66,4.04,2.66,6.56s-.9,4.68-2.7,6.48c-1.8,1.8-3.96,2.7-6.48,2.7-1.91,0-3.61-.48-5.11-1.45-1.53-.97-2.67-2.21-3.42-3.75l3.46-1.41c1.15,1.8,2.82,2.7,4.99,2.7,1.53,0,2.81-.51,3.83-1.53.51-.51.89-1.07,1.15-1.69.26-.62.38-1.3.38-2.05,0-1.48-.5-2.75-1.49-3.83-.99-1.07-2.22-1.61-3.67-1.61h-6.81v-14.05h14.3Z"/>
+              <path class="cls-1" d="M188.52,15.43c1.75,1.72,2.62,3.78,2.62,6.2,0,2.2-.94,4.3-2.82,6.28l-9.3,9.74h12.24v3.91h-17.76v-3.91l11.88-12.24c1.24-1.32,1.85-2.58,1.85-3.79,0-1.42-.47-2.58-1.41-3.46-.94-.94-2.1-1.41-3.46-1.41-1.21,0-2.24.34-3.1,1.01s-1.42,1.58-1.69,2.74l-3.79-.89c.48-1.99,1.51-3.6,3.06-4.83,1.58-1.26,3.4-1.89,5.43-1.89,2.42,0,4.5.85,6.24,2.54Z"/>
+            </g>
+            <g>
+              <g>
+                <path class="cls-2" d="M18.97,48.69c-3.02,3.44-8.21,3.82-11.71.91.48,1.21,1.2,2.33,2.25,3.25,3.5,3.07,8.82,2.72,11.89-.78,2.46-2.81,3.85-10.8,4.27-17.66-.91.18-1.84.38-2.77.59-.64,5.73-1.93,11.42-3.93,13.7Z"/>
+                <path class="cls-2" d="M5.55,38.18c4.3-4.91,16.62-7.48,21.96-8.39.11-2.27.11-3.77.11-3.77,0,0-18.94,2.45-24.49,8.78-4.41,5.04-4.09,12.59.58,17.26-2.16-4.44-1.61-9.93,1.85-13.88Z"/>
+              </g>
+              <g>
+                <path class="cls-2" d="M48.65,36.41c3.44,3.02,3.82,8.21.91,11.71,1.21-.48,2.33-1.2,3.25-2.25,3.07-3.5,2.71-8.83-.78-11.89-2.8-2.46-10.79-3.86-17.65-4.27.18.91.38,1.84.59,2.77,5.73.64,11.41,1.94,13.69,3.93Z"/>
+                <path class="cls-2" d="M38.15,49.83c-4.91-4.31-7.48-16.63-8.39-21.97-2.26-.11-3.77-.11-3.77-.11,0,0,2.44,18.95,8.78,24.51,5.04,4.42,12.58,4.1,17.25-.58-4.44,2.17-9.93,1.61-13.87-1.85Z"/>
+              </g>
+              <g>
+                <path class="cls-2" d="M36.49,6.69c3.02-3.44,8.21-3.82,11.71-.91-.48-1.21-1.2-2.33-2.25-3.25-3.5-3.07-8.82-2.72-11.89.78-2.46,2.81-3.85,10.8-4.27,17.66.91-.18,1.84-.38,2.77-.59.64-5.73,1.93-11.42,3.93-13.7Z"/>
+                <path class="cls-2" d="M49.91,17.2c-4.3,4.91-16.62,7.48-21.96,8.39-.11,2.27-.11,3.77-.11,3.77,0,0,18.94-2.45,24.49-8.78,4.41-5.04,4.09-12.59-.58-17.26,2.16,4.44,1.61,9.93-1.85,13.88Z"/>
+              </g>
+              <g>
+                <path class="cls-2" d="M6.8,18.98c-3.44-3.02-3.82-8.21-.91-11.71-1.21.48-2.33,1.2-3.25,2.25C-.42,13.01-.07,18.34,3.43,21.4c2.8,2.46,10.79,3.86,17.65,4.27-.18-.91-.38-1.84-.59-2.77-5.73-.64-11.41-1.94-13.69-3.93Z"/>
+                <path class="cls-2" d="M17.31,5.56c4.91,4.31,7.48,16.63,8.39,21.97,2.26.11,3.77.11,3.77.11,0,0-2.44-18.95-8.78-24.51C15.65-1.29,8.1-.97,3.44,3.7c4.44-2.17,9.93-1.61,13.87,1.85Z"/>
+              </g>
+              <rect class="cls-2" x="27.49" y="27.31" width=".6" height=".67"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    
+    <ul class="nav-menu desktop-menu">
+      <li><a class="nav-menu-cl" href="index.html">Главная</a></li>
+      <li><a class="nav-menu-cl" href="services_prise.html">Услуги</a></li>
+      <li><a class="nav-menu-cl" href="ggg.html">Калькулятор</a></li>
+      <li><a class="nav-menu-cl" href="form.html">О нас</a></li>
+      <li><a class="nav-menu-cl" href="about.html">Контакты</a></li>
+      <li><a class="nav-menu-cl" href="foto.html">Фотогалерея</a></li>
+
+    </ul>
+    <div class="svet">
+      <div class="lig-dark nav-menu-cl" id="themeToggle"><?xml version="1.0" ?><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M10.6338 0.90947C11.4028 0.189743 12.5981 0.189742 13.3671 0.90947L15.6927 3.0861L18.8763 3.19143C19.9289 3.22625 20.7742 4.07152 20.809 5.1242L20.9144 8.30774L23.091 10.6333C23.8107 11.4023 23.8107 12.5977 23.091 13.3667L20.9144 15.6923L20.809 18.8758C20.7742 19.9285 19.9289 20.7738 18.8763 20.8086L15.6927 20.9139L13.3671 23.0905C12.5981 23.8103 11.4028 23.8103 10.6338 23.0905L8.30819 20.9139L5.12464 20.8086C4.07197 20.7738 3.2267 19.9285 3.19187 18.8758L3.08654 15.6923L0.909913 13.3667C0.190186 12.5977 0.190185 11.4023 0.909912 10.6333L3.08654 8.30774L3.19187 5.1242C3.2267 4.07152 4.07196 3.22625 5.12464 3.19143L8.30819 3.0861L10.6338 0.90947ZM8.58287 5.6352C9.47214 5.22705 10.4609 5 11.5 5C15.366 5 18.5 8.13401 18.5 12C18.5 15.866 15.366 19 11.5 19C10.4609 19 9.47214 18.7729 8.58287 18.3648C8.22768 18.2018 8 17.8468 8 17.456C8 17.0651 8.22768 16.7101 8.58287 16.5471C10.3064 15.7561 11.5 14.0164 11.5 12C11.5 9.98362 10.3064 8.24392 8.58287 7.45289C8.22768 7.28987 8 6.93486 8 6.54404C8 6.15322 8.22768 5.79822 8.58287 5.6352Z" fill="#2764AE" fill-rule="evenodd"/></svg><?xml version="1.0" ?></div>
+      
+      <div class="burger-icon" id="burgerToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="burger-modal" id="burgerModal">
+    <div class="burger-modal-content">
+      <div class="burger-close" id="burgerClose">×</div>
+      <ul class="burger-menu">
+        <li><a class="burger-menu-cl" href="index.html">Главная</a></li>
+        <li><a class="burger-menu-cl" href="services_prise.html">Услуги</a></li>
+        <li><a class="burger-menu-cl" href="ggg.html">Калькулятор</a></li>
+        <li><a class="burger-menu-cl" href="form.html">О нас</a></li>
+        <li><a class="burger-menu-cl" href="about.html">Контакты</a></li>
+        <li><a class="burger-menu-cl" href="foto.html">Фотогалерея</a></li>
+
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const burgerToggle = document.getElementById('burgerToggle');
+    const burgerModal = document.getElementById('burgerModal');
+    const burgerClose = document.getElementById('burgerClose');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+
+    burgerToggle.addEventListener('click', function() {
+      burgerModal.classList.add('active');
+      burgerToggle.classList.add('active');
+    });
+
+    burgerClose.addEventListener('click', function() {
+      burgerModal.classList.remove('active');
+      burgerToggle.classList.remove('active');
+    });
+
+    burgerModal.addEventListener('click', function(e) {
+      if (e.target === burgerModal) {
+        burgerModal.classList.remove('active');
+        burgerToggle.classList.remove('active');
+      }
+    });
+  });
+
+</script>
+    <main class="about-page">
+        <div class="container">
+            
+            <div class="page-header">
+                <span class="page-header__subtitle">Профессионалы с 2008 года</span>
+                <h1 class="page-header__title">О компании «Бур-52»</h1>
+                <p class="page-header__description">Более 15 лет успешной работы в области бурения скважин на воду в Нижегородской области</p>
+            </div>
+
+            
+            <div class="about-content">
+                
+                <section class="about-section">
+                    <h2 class="about-section__title">Наша история</h2>
+                    <div class="about-section__content">
+                        <p>Компания «Бур-52» успешно работает в сфере бурения скважин на воду с 2008 года, обладая значительным опытом. Мы специализируемся на проведении геологоразведочных работ для добычи воды и осуществляем полный цикл работ: от проектирования до сдачи готовой скважины в эксплуатацию.</p>
+                        <p>Наша команда состоит из квалифицированных специалистов, использующих современное оборудование европейского производства. Мы гарантируем высокое качество работ и соблюдение всех технологических процессов, что подтверждается официальной 5-летней гарантией на все виды работ.</p>
+                        <p>Надежность, профессионализм и долгосрочные гарантии — основа нашей работы. За 15 лет деятельности мы выполнили более 500 успешных проектов, заслужив доверие клиентов по всей Нижегородской области.</p>
+                    </div>
+                </section>
+
+                
+                <section class="about-section">
+                    <h2 class="about-section__title">Почему выбирают нас</h2>
+                    <div class="about-section__content">
+                        <p>Мы строим долгосрочные отношения с клиентами, основываясь на качестве работы и прозрачности взаимодействия. Вот что отличает нас от конкурентов:</p>
+
+                        <div class="advantages-grid">
+                            <div class="advantage-card">
+                                <div class="advantage-icon">15+</div>
+                                <h3 class="advantage-title">Лет опыта</h3>
+                                <p class="advantage-description">Работаем с 2008 года, знаем все нюансы бурения в Нижегородской области</p>
+                            </div>
+
+                            <div class="advantage-card">
+                                <div class="advantage-icon">500+</div>
+                                <h3 class="advantage-title">Проектов</h3>
+                                <p class="advantage-description">Успешно выполнили более 500 скважин для частных и коммерческих клиентов</p>
+                            </div>
+
+                            <div class="advantage-card">
+                                <div class="advantage-icon">5 лет</div>
+                                <h3 class="advantage-title">Гарантия</h3>
+                                <p class="advantage-description">Даем официальную гарантию 5 лет на все работы и оборудование</p>
+                            </div>
+
+                            <div class="advantage-card">
+                                <div class="advantage-icon">0%</div>
+                                <h3 class="advantage-title">Предоплаты</h3>
+                                <p class="advantage-description">Работаем без предоплаты, оплата только после сдачи работы</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="about-section">
+                    <h2 class="about-section__title">Кому мы помогаем</h2>
+                    <div class="about-section__content">
+                        <p>Наша основная целевая аудитория — это владельцы загородной недвижимости и коммерческие предприятия, нуждающиеся в надежном автономном водоснабжении:</p>
+                        <ul style="padding-left: 20px; margin: 20px 0; line-height: 1.7;">
+                            <li><strong>Владельцы загородных домов и коттеджей</strong> (возраст 25+ лет)</li>
+                            <li><strong>Собственники дачных участков</strong> для сезонного или постоянного проживания</li>
+                            <li><strong>Частные домовладельцы</strong> в сельской местности</li>
+                            <li><strong>Фермерские хозяйства и сельхозпредприятия</strong></li>
+                            <li><strong>Коммерческие организации</strong>, нуждающиеся в технической воде</li>
+                            <li><strong>Строительные компании</strong> для объектов вдали от центральных коммуникаций</li>
+                        </ul>
+                        <p>До недавнего времени наши клиенты узнавали о нас в основном через рекомендации знакомых и объявления на «Авито». Теперь мы расширяем свое присутствие через современный веб-сайт, чтобы быть доступнее для всех жителей Нижегородской области.</p>
+                    </div>
+                </section>
+
+                
+                <section class="about-section">
+                    <h2 class="about-section__title">География работ</h2>
+                    <div class="about-section__content">
+                        <p>Мы осуществляем бурение скважин по всей Нижегородской области, с особым фокусом на следующие районы:</p>
+
+                        <div class="regions-list">
+                            <span class="region-badge">Ковернинский район</span>
+                            <span class="region-badge">Городецкий район</span>
+                            <span class="region-badge">Чкаловский район</span>
+                            <span class="region-badge">Воскресенский район</span>
+                            <span class="region-badge">Борский район</span>
+                            <span class="region-badge">Семеновский район</span>
+                            <span class="region-badge">Нижегородская область</span>
+                        </div>
+
+                        <p style="margin-top: 20px;">Готовы рассмотреть возможность работы и в других районах Нижегородской области. Для уточнения возможности выезда свяжитесь с нами по телефону.</p>
+                    </div>
+                </section>
+
+                
+                <section class="contact-info">
+                    <h2 class="contact-info__title">Контактная информация</h2>
+
+                    <ul class="contact-details">
+                        <li class="contact-details__item">
+                            <div class="contact-details__icon">🏢</div>
+                            <div class="contact-details__content">
+                                <h4>ИП Глазунов</h4>
+                                <p>Нижегородская область, Городецкий район, село Зарубино</p>
+                            </div>
+                        </li>
+
+                        <li class="contact-details__item">
+                            <div class="contact-details__icon">📞</div>
+                            <div class="contact-details__content">
+                                <h4>Телефон</h4>
+                                <p><a href="tel:89200521982" class="contact-details__link">8 (920) 052-19-82</a></p>
+                            </div>
+                        </li>
+
+                        <li class="contact-details__item">
+                            <div class="contact-details__icon">✉️</div>
+                            <div class="contact-details__content">
+                                <h4>Электронная почта</h4>
+                                <p><a href="mailto:nn.glazunov@yandex.ru" class="contact-details__link">nn.glazunov@yandex.ru</a></p>
+                            </div>
+                        </li>
+
+                        <li class="contact-details__item">
+                            <div class="contact-details__icon">🕐</div>
+                            <div class="contact-details__content">
+                                <h4>Режим работы</h4>
+                                <p>Пн-Пт: 8:00-18:00
+                                    Сб: 9:00-16:00
+                                    Вс: по договоренности</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            
+            <section class="cta-section">
+                <h2 class="cta-title">Нужна консультация по бурению скважины?</h2>
+                <p class="cta-description">Оставьте заявку и наш специалист свяжется с вами в течение 30 минут. Бесплатный выезд на участок для точного расчета стоимости.</p>
+
+                <div class="cta-buttons">
+                    <a href="tel:89200521982" class="cta-btn primary">Позвонить: 8 (920) 052-19-82</a>
+                    <a href="contact.html" class="cta-btn secondary">Оставить заявку онлайн</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="main-footer">
+  <div class="container">
+    
+    <div class="footer-top">
+      <div class="footer-column">
+        <div class="footer-logo">
+          <a href="index.html">
+
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg width="150px" id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161.93 46.89">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #fff;
+                  }
+
+                  .cls-2 {
+                    fill: #2764ae;
+                  }
+                </style>
+              </defs>
+              <g id="_Слой_1-2" data-name="Слой 1">
+                <g>
+                  <path class="cls-1" d="M68.73,11.33v3.27h-10.77v5.73h5.28c2.04,0,3.8.73,5.25,2.18.73.71,1.27,1.5,1.64,2.39.36.89.55,1.84.55,2.86,0,2.04-.73,3.8-2.18,5.25-1.46,1.45-3.21,2.18-5.25,2.18h-8.56V11.33h14.04ZM57.96,31.88h5.28c1.14,0,2.11-.4,2.93-1.19.8-.82,1.19-1.79,1.19-2.93s-.4-2.11-1.19-2.93c-.82-.8-1.8-1.19-2.93-1.19h-5.28v8.25Z"/>
+                  <path class="cls-1" d="M76.81,11.33l5.73,12.17,5.93-12.17h3.68l-10.26,20.83c-.25.52-.56,1-.94,1.41-.37.42-.81.79-1.31,1.11-.98.61-2.08.92-3.31.92h-.75v-3.31h.75c.61,0,1.14-.14,1.57-.41.48-.29.84-.69,1.09-1.19l1.64-3.44-7.43-15.92h3.61Z"/>
+                  <path class="cls-1" d="M103.91,11.33c2.14,0,3.95.75,5.45,2.25,1.5,1.5,2.25,3.32,2.25,5.45,0,1.07-.18,2.06-.55,2.97-.36.91-.93,1.74-1.7,2.49-1.5,1.52-3.32,2.28-5.45,2.28h-5.01v8.42h-3.27V11.33h8.28ZM98.9,23.46h5.01c1.2,0,2.25-.44,3.14-1.33.86-.86,1.29-1.9,1.29-3.1s-.43-2.21-1.29-3.1c-.89-.86-1.93-1.29-3.14-1.29h-5.01v8.83Z"/>
+                  <path class="cls-1" d="M114.48,23.4h10.91v3.27h-10.91v-3.27Z"/>
+                  <path class="cls-1" d="M142.98,11.33v3.31h-8.83v5.28h2.49c2.09.02,3.9.81,5.42,2.35,1.5,1.57,2.25,3.42,2.25,5.56s-.76,3.97-2.29,5.49c-1.52,1.52-3.35,2.28-5.49,2.28-1.61,0-3.06-.41-4.33-1.23-1.29-.82-2.26-1.87-2.9-3.17l2.93-1.19c.98,1.52,2.38,2.28,4.23,2.28,1.3,0,2.38-.43,3.24-1.3.43-.43.76-.91.97-1.43.22-.52.32-1.1.32-1.74,0-1.25-.42-2.33-1.26-3.24-.84-.91-1.88-1.36-3.1-1.36h-5.76v-11.9h12.1Z"/>
+                  <path class="cls-1" d="M159.61,13.07c1.48,1.45,2.22,3.2,2.22,5.25,0,1.86-.79,3.64-2.38,5.32l-7.88,8.25h10.36v3.31h-15.03v-3.31l10.06-10.36c1.05-1.11,1.57-2.18,1.57-3.21,0-1.2-.4-2.18-1.19-2.93-.8-.8-1.77-1.19-2.93-1.19-1.02,0-1.9.28-2.63.85s-1.21,1.34-1.43,2.32l-3.21-.75c.41-1.68,1.27-3.04,2.59-4.09,1.34-1.07,2.87-1.6,4.6-1.6,2.04,0,3.81.72,5.28,2.15Z"/>
+                </g>
+                <g>
+                  <g>
+                    <path class="cls-2" d="M16.06,41.22c-2.55,2.92-6.95,3.24-9.91.77.4,1.02,1.02,1.98,1.9,2.75,2.96,2.6,7.47,2.3,10.06-.66,2.08-2.37,3.26-9.14,3.61-14.95-.77.15-1.55.32-2.34.5-.54,4.85-1.64,9.67-3.33,11.6Z"/>
+                    <path class="cls-2" d="M4.7,32.32c3.64-4.16,14.07-6.33,18.59-7.1.09-1.92.09-3.19.09-3.19,0,0-16.04,2.07-20.74,7.44-3.74,4.27-3.47,10.66.49,14.61-1.83-3.76-1.36-8.41,1.57-11.75Z"/>
+                  </g>
+                  <g>
+                    <path class="cls-2" d="M41.19,30.82c2.91,2.56,3.23,6.95.77,9.92,1.02-.4,1.97-1.02,2.75-1.9,2.6-2.96,2.3-7.47-.66-10.07-2.37-2.08-9.14-3.27-14.95-3.61.15.77.32,1.56.5,2.34,4.85.54,9.66,1.64,11.59,3.33Z"/>
+                    <path class="cls-2" d="M32.3,42.19c-4.16-3.65-6.33-14.08-7.1-18.6-1.92-.09-3.19-.09-3.19-.09,0,0,2.07,16.05,7.43,20.75,4.26,3.74,10.65,3.47,14.6-.49-3.76,1.83-8.41,1.36-11.75-1.57Z"/>
+                  </g>
+                  <g>
+                    <path class="cls-2" d="M30.9,5.67c2.55-2.92,6.95-3.24,9.91-.77-.4-1.02-1.02-1.98-1.9-2.75-2.96-2.6-7.47-2.3-10.06.66-2.08,2.37-3.26,9.14-3.61,14.95.77-.15,1.55-.32,2.34-.5.54-4.85,1.64-9.67,3.33-11.6Z"/>
+                    <path class="cls-2" d="M42.25,14.57c-3.64,4.16-14.07,6.33-18.59,7.1-.09,1.92-.09,3.19-.09,3.19,0,0,16.04-2.07,20.74-7.44,3.74-4.27,3.47-10.66-.49-14.61,1.83,3.76,1.36,8.41-1.57,11.75Z"/>
+                  </g>
+                  <g>
+                    <path class="cls-2" d="M5.76,16.07c-2.91-2.56-3.23-6.95-.77-9.92-1.02.4-1.97,1.02-2.75,1.9C-.36,11.02-.06,15.52,2.9,18.12c2.37,2.08,9.14,3.27,14.95,3.61-.15-.77-.32-1.56-.5-2.34-4.85-.54-9.66-1.64-11.59-3.33Z"/>
+                    <path class="cls-2" d="M14.65,4.7c4.16,3.65,6.33,14.08,7.1,18.6,1.92.09,3.19.09,3.19.09,0,0-2.07-16.05-7.43-20.75C13.25-1.09,6.86-.82,2.91,3.14c3.76-1.83,8.41-1.36,11.75,1.57Z"/>
+                  </g>
+                  <rect class="cls-2" x="23.27" y="23.12" width=".51" height=".57"/>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <p class="footer-description">Профессиональное бурение скважин на воду в Нижегородской области с 2008 года</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://vk.com" class="social-link" target="_blank" rel="noopener noreferrer" title="ВКонтакте">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M21.579 6.855c.13-.473 0-.855-.855-.855h-2.658c-.72 0-1.052.285-1.234.855 0 0-1.455 3.648-3.513 6.01-.667.718-1.049.947-1.44.947-.192 0-.473-.24-.473-.855V6.855c0-.76-.24-.855-.947-.855h-4.73c-.525 0-.855.192-.855.618 0 .65.902.802.997 2.628v3.96c0 .96-.173 1.13-.556 1.13-1.017 0-3.489-3.71-4.954-7.97C2.342 6.285 2.02 6 1.34 6H.685C0 6 0 6.285 0 6.855c0 .81 1.08 4.815 5.034 10.118C7.13 19.71 10.216 22 13.08 22c1.92 0 2.157-.428 2.157-1.165v-2.658c0-.855.192-1.026.855-1.026.48 0 1.314.24 3.256 2.116C21.36 21.565 21.77 22 22.785 22h2.658c.76 0 1.14-.192.92-.855-.24-.76-1.097-1.865-2.237-3.176-.48-.57-1.198-1.192-1.415-1.506-.31-.476-.218-.718 0-1.165.002.003 3.497-4.944 3.857-6.629z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://avito.ru" class="social-link" target="_blank" rel="noopener noreferrer" title="Авито">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com" class="social-link" target="_blank" rel="noopener noreferrer" title="YouTube">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M10 15l5.19-3L10 9v6zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-title">Услуги</h3>
+        <ul class="footer-menu">
+          <li><a href="services.html#drilling">Бурение скважин на воду</a></li>
+          <li><a href="services.html#pump">Монтаж насосного оборудования</a></li>
+          <li><a href="services.html#cleaning">Чистка и ремонт скважин</a></li>
+          <li><a href="services.html#equipment">Обустройство скважины</a></li>
+          <li><a href="services.html#diagnostics">Видеодиагностика скважины</a></li>
+          <li><a href="services.html#consultation">Консультация специалиста</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-title">Компания</h3>
+        <ul class="footer-menu">
+          <li><a href="about.html">О компании</a></li>
+          <li><a href="about.html#experience">Наш опыт</a></li>
+          <li><a href="about.html#geography">География работ</a></li>
+          <li><a href="about.html#reviews">Отзывы клиентов</a></li>
+          <li><a href="services.html#calculator">Калькулятор стоимости</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-title">Контакты</h3>
+        <div class="footer-contacts">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-info2">
+              <a href="tel:89200521982">8 (920) 052-19-82</a>
+              <span class="contact-label">Телефон для связи</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-info2">
+              <a href="mailto:nn.glazunov@yandex.ru">nn.glazunov@yandex.ru</a>
+              <span class="contact-label">Электронная почта</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-info2">
+              <span>Нижегородская область</span>
+              <span class="contact-label">Городецкий район, село Зарубино</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-info2">
+              <span>Пн-Пт: 8:00-18:00</span>
+              <span class="contact-label">Сб: 9:00-16:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        <p>© 2008–2025 «Бур-52». Все права защищены.</p>
+        <p>ИП Глазунов. ОГРНИП 309524811100019</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="privacy.html" class="footer-link">Политика конфиденциальности</a>
+        <a href="agreement.html" class="footer-link">Пользовательское соглашение</a>
+        <a href="sitemap.html" class="footer-link">Карта сайта</a>
+      </div>
+    </div>
+
+    
+    <button class="back-to-top" id="backToTop" aria-label="Вернуться наверх">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</footer>
+</body>
+</html>

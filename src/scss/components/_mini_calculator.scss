@@ -1,0 +1,364 @@
+.mini-calculator-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, rgba(39, 100, 174, 0.03) 0%, rgba(39, 100, 174, 0.01) 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-subtitle {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--lazur);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  padding: 6px 15px;
+  background-color: rgba(39, 100, 174, 0.1);
+  border-radius: 15px;
+}
+
+.section-title {
+  font-family: 'Unageo', sans-serif;
+  font-size: 2rem;
+  color: var(--gagat);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.mini-calculator {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(38, 70, 83, 0.08);
+  border: 1px solid var(--gagat2);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mini-calculator-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.label-text {
+  font-family: 'Unageo', sans-serif;
+  font-size: 1.1rem;
+  color: var(--gagat);
+  font-weight: 600;
+}
+
+.label-value {
+  font-size: 1.2rem;
+  color: var(--lazur);
+  font-weight: 700;
+}
+
+.range-slider {
+  position: relative;
+  margin: 20px 0 10px;
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  background: var(--gagat2);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--lazur);
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(39, 100, 174, 0.25);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(39, 100, 174, 0.3);
+}
+
+.slider-ticks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--gagat);
+}
+
+.slider-ticks span {
+  position: relative;
+  padding-top: 15px;
+  opacity: 0.7;
+}
+
+.slider-ticks span::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 8px;
+  background-color: var(--gagat2);
+}
+
+.diameter-options {
+  display: flex;
+  gap: 15px;
+}
+
+.diameter-option {
+  flex: 1;
+}
+
+.diameter-option input[type="radio"] {
+  display: none;
+}
+
+.diameter-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: white;
+  border: 2px solid var(--gagat2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.diameter-option input[type="radio"]:checked + .diameter-label {
+  border-color: var(--lazur);
+  background-color: rgba(39, 100, 174, 0.05);
+}
+
+.diameter-text {
+  font-weight: 500;
+  color: var(--gagat);
+  font-size: 0.95rem;
+}
+
+.diameter-price {
+  color: var(--lazur);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.mini-result {
+  background: linear-gradient(135deg, rgba(39, 100, 174, 0.03) 0%, rgba(39, 100, 174, 0.01) 100%);
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
+  border: 1px solid rgba(39, 100, 174, 0.1);
+}
+
+.mini-result-content {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.mini-estimate {
+  margin-bottom: 15px;
+}
+
+.mini-estimate-label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--gagat);
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.mini-estimate-price {
+  font-size: 2rem;
+  color: var(--lazur);
+  font-weight: 700;
+  display: block;
+}
+
+.mini-result-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.note-icon {
+  font-size: 0.9rem;
+}
+
+.mini-calculator-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  font-family: 'Unageo', sans-serif;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--lazur);
+  border-color: var(--lazur);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: var(--lazur);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(39, 100, 174, 0.2);
+}
+
+.btn-secondary {
+  background-color: white;
+  border-color: var(--gagat);
+  color: var(--gagat);
+}
+
+.btn-secondary:hover {
+  background-color: var(--gagat);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(60, 60, 59, 0.1);
+}
+
+.mini-notice {
+  padding: 12px 16px;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid var(--lazur);
+  text-align: center;
+}
+
+.mini-notice p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--gagat);
+  line-height: 1.4;
+}
+
+.mini-notice strong {
+  color: var(--lazur);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .mini-calculator-section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .mini-calculator {
+    padding: 25px;
+  }
+
+  .mini-estimate-price {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .mini-calculator-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .mini-calculator {
+    padding: 20px;
+  }
+
+  .diameter-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mini-estimate-price {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .slider-ticks span {
+    font-size: 0.8rem;
+    padding-top: 12px;
+  }
+
+  .diameter-text {
+    font-size: 0.9rem;
+  }
+
+  .mini-estimate-price {
+    font-size: 1.5rem;
+  }
+
+  .mini-notice p {
+    font-size: 0.8rem;
+  }
+}
+

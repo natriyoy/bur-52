@@ -1,215 +1,152 @@
+header {
+  body.light-theme & {
+    color: var(--dark);
+  }
+  z-index: 1000;
 
-.main-nav {
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 1rem 2rem;
+  .nav {
+    border-radius: 25px;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-around;
+    align-items: center;
 
-  /* Логотип */
-  .nav-logo {
-    flex-shrink: 0;
 
-    .logo-link {
-      display: block;
-      transition: opacity 0.3s;
+    }
+    .logo-icon {
+      font-size: 1.3em;
+    }
 
-      &:hover {
-        opacity: 0.8;
+
+
+
+    .nav-menu.desktop-menu {
+
+      list-style: none;
+      gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      @media (max-width: 1100px) {
+        display: none;
       }
+      .nav-menu-cl {
+        padding: 10px 20px;
 
-      svg {
-        display: block;
+        text-decoration: none;
+        color: var(--light);
+        font-weight: bold;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        body.light-theme & {
+          color: #333333;
+        }
+        &:hover {
+          background: var(--gagat2);
+          color: var(--lazur);
+        }
+      }
+    }
+
+    .burger-icon {
+
+      display: none;
+      flex-direction: column;
+      width: 30px;
+      height: 21px;
+      cursor: pointer;
+      position: relative;
+      z-index: 1001;
+      @media (max-width: 810px) {
+        display: flex;
+      }
+      span {
+        height: 3px;
+        width: 100%;
+        background: var(--gagat);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+        &:nth-child(2) {
+          margin: 6px 0;
+        }
+      }
+    }
+  }
+  // Модалка
+  .burger-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    &.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .burger-modal-content {
+
+
+      border-radius: 25px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+
+      position: relative;
+      .burger-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+        color: var(--accent);
+        cursor: pointer;
+        width: 40px;
         height: 40px;
       }
-    }
-  }
 
-  /* Основное меню */
-  .nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+      .burger-menu {
 
-    .nav-item {
-      .nav-link {
-        color: var(--gagat);
-        text-decoration: none;
-        padding: 10px 15px;
-        border-radius: 20px;
-        transition: all 0.4s;
-        display: block;
-        font-family: 'Unageo', sans-serif;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        .burger-menu-cl {
 
-        &:hover {
+          display: block;
+          text-decoration: none;
           color: var(--lazur);
-          background-color: var(--gagat2);
-        }
-      }
-    }
-  }
-
-  /* Контакты */
-  .nav-contacts {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin: 0;
-    padding: 0;
-
-    .contact-item {
-      .contact-link {
-        color: var(--lazur);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: opacity 0.3s;
-        font-family: 'Unageo', sans-serif;
-
-        &:hover {
-          opacity: 0.8;
-        }
-
-        .icon {
-          flex-shrink: 0;
-        }
-      }
-    }
-  }
-
-  /* Кнопка темы (статичная) */
-  .theme-btn {
-    padding: 8px 16px;
-    color: var(--gagat);
-    font-family: 'Unageo', sans-serif;
-    opacity: 0.5;
-    cursor: default;
-    user-select: none;
-  }
-
-  /* Мобильное меню (скрыто на десктопе) */
-  .mobile-menu-btn {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-
-    .burger-line {
-      width: 24px;
-      height: 2px;
-      background-color: var(--gagat);
-      transition: all 0.3s;
-    }
-  }
-}
-
-/* Адаптивность */
-@media (max-width: 1200px) {
-  .main-nav {
-    padding: 1rem;
-
-    .nav-menu {
-      gap: 20px;
-    }
-  }
-}
-
-@media (max-width: 992px) {
-  .main-nav {
-    .nav-contacts {
-      display: none;
-    }
-
-    .theme-btn {
-      display: none;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .main-nav {
-    flex-wrap: wrap;
-
-    .nav-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: var(--white);
-      flex-direction: column;
-      padding: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-      &.active {
-        display: flex;
-      }
-
-      .nav-item {
-        width: 100%;
-
-        .nav-link {
-          padding: 15px;
-          border-radius: 10px;
+          padding: 15px 20px;
+          font-weight: 500;
+          border-radius: 15px;
+          transition: all 0.3s ease;
           text-align: center;
-        }
-      }
-    }
+          font-size: 1.1em;
+          cursor: pointer;
+          &:hover {
+            background: var(--gagat2);
 
-    .mobile-menu-btn {
-      display: flex;
-      order: 1;
-      margin-left: auto;
-    }
-
-    &.menu-open {
-      .nav-menu {
-        display: flex;
-      }
-
-      .mobile-menu-btn {
-        .burger-line:nth-child(1) {
-          transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .burger-line:nth-child(2) {
-          opacity: 0;
-        }
-
-        .burger-line:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -6px);
+          }
         }
       }
     }
   }
+
+
+.svet {
+  display: flex;
+  gap: 20px;
+  align-content: center;
 }
+.lig-dark {
+  cursor: pointer;
 
-@media (max-width: 480px) {
-  .main-nav {
-    padding: 0.75rem;
-
-    .nav-logo {
-      .logo-link svg {
-        height: 32px;
-      }
-    }
-
-    .nav-menu {
-      gap: 10px;
-
-      .nav-item {
-        .nav-link {
-          padding: 12px;
-          font-size: 0.95rem;
-        }
-      }
-    }
-  }
 }

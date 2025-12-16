@@ -60,7 +60,7 @@
   margin-top: 30px;
 }
 
-.btn {
+.btn2 {
   padding: 15px 30px;
   border-radius: 5px;
   text-decoration: none;
@@ -72,29 +72,24 @@
   min-width: 200px;
 }
 
-.btn-primary {
-  background-color: #007bff;
+.btn-primary2 {
+  background-color: var(--lazur);
   color: white;
-  border: 2px solid #007bff;
+  border: 2px solid var(--lazur);
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-  transform: translateY(-3px);
+.btn-primary2:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.btn-secondary {
-  background-color: transparent;
+.btn-secondary2 {
   color: white;
   border: 2px solid white;
 }
 
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+.btn-secondary2:hover {
+  background-color: white;
+  color: var(--lazur);
 }
 /* Для мобильных устройств */
 @media (max-width: 768px) {

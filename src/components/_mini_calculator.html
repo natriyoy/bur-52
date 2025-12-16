@@ -1,0 +1,74 @@
+<section id="mini-calculator" class="mini-calculator-section">
+    <div class="container">
+
+        @@include('../components/_chapter.html', {
+        "subtitle": "Быстрый расчет",
+        "title": "Предварительная стоимость скважины",
+        "description": "Рассчитайте примерную стоимость за 30 секунд"
+        })
+        <div class="mini-calculator">
+            <div class="mini-calculator-form">
+                <!-- Глубина скважины -->
+                <div class="form-group">
+                    <div class="form-label">
+                        <span class="label-text">Глубина скважины</span>
+                        <span class="label-value"><span id="miniDepthDisplay">50</span> м</span>
+                    </div>
+                    <div class="range-slider">
+                        <input type="range" id="miniDepthRange" min="10" max="200" value="50" step="10" class="slider">
+                        <div class="slider-ticks">
+                            <span>10м</span>
+                            <span>100м</span>
+                            <span>200м</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Диаметр трубы -->
+                <div class="form-group">
+                    <div class="form-label">
+                        <span class="label-text">Диаметр трубы</span>
+                    </div>
+                    <div class="diameter-options">
+                        <div class="diameter-option">
+                            <input type="radio" id="miniDiameter125" name="miniDiameter" value="125" checked>
+                            <label for="miniDiameter125" class="diameter-label">
+                                <span class="diameter-text">125 мм</span>
+                            </label>
+                        </div>
+                        <div class="diameter-option">
+                            <input type="radio" id="miniDiameter150" name="miniDiameter" value="150" >
+                            <label for="miniDiameter150" class="diameter-label">
+                                <span class="diameter-text">150 мм</span>
+                                <span class="diameter-price">+5 000 ₽</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Быстрая стоимость -->
+                <div class="mini-result">
+                    <div class="mini-result-content">
+                        <div class="mini-estimate">
+                            <span class="mini-estimate-label">Примерная стоимость:</span>
+                            <span class="mini-estimate-price" id="miniTotalPrice">125 000 ₽</span>
+                        </div>
+                        <div class="mini-result-note">
+                            <span class="note-icon">ℹ️</span>
+                            <span class="note-text">Это предварительный расчет</span>
+                        </div>
+                    </div>
+
+                    <div class="mini-calculator-actions">
+                        <a href="calculator.html" class="btn btn-secondary">Подробный расчет</a>
+                        <a href="#contact-form" class="btn btn-primary">Заказать выезд специалиста</a>
+                    </div>
+
+                    <div class="mini-notice">
+                        <p><strong>Точную стоимость</strong> рассчитает наш специалист после бесплатного выезда на ваш участок</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

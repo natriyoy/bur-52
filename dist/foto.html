@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Фотогалерея</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ecf0f1;
+            font-size: 1.8rem;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .photo-container {
+            flex: 1 0 300px;
+            margin: 10px;
+            max-width: calc(33.333% - 20px);
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-container:hover .photo {
+            transform: scale(1.05);
+        }
+
+        .photo-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px 15px 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        max-width: 1100px {
+                           .photo-container {
+                               max-width: calc(50% - 20px);
+                           }
+                       }
+
+        max-width: 768px {
+                          .photo-container {
+                              max-width: 100%;
+                              flex: 1 0 100%;
+                              height: 250px;
+                          }
+
+                          .section {
+                              padding: 15px;
+                          }
+                      }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+<div class="gallery">
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190801090133.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190801112509.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190801125615_01.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804101727.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804101804.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804141410.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804141421.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804141426.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804141445.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804141508.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804141518.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804155231.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804155244.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804164107.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190804164203.webp" alt="Борский район" class="photo">
+    </div>
+    <div class="photo-container">
+        <img src="./assets/images/IMG20190805084717.webp" alt="Борский район" class="photo">
+    </div>
+</div>
+
+<style>
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 1400px;
+        padding: 20px;
+    }
+
+    .photo-container {
+        flex: 1 0 calc(25% - 15px);
+        min-width: 250px;
+        height: 280px;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        background-color: #fff;
+    }
+
+    .photo-container:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    .photo-container:hover .photo {
+        transform: scale(1.08);
+    }
+
+    max-width: 1200px {
+                       .photo-container {
+                           flex: 1 0 calc(33.333% - 15px);
+                           height: 260px;
+                       }
+                   }
+
+    max-width: 900px {
+                      .photo-container {
+                          flex: 1 0 calc(50% - 15px);
+                          height: 240px;
+                      }
+                  }
+
+    max-width: 600px {
+                      .photo-container {
+                          flex: 1 0 100%;
+                          height: 220px;
+                          max-width: 400px;
+                      }
+
+                      .gallery {
+                          padding: 15px;
+                      }
+                  }
+</style>
+```
+</body>
+</html>

@@ -1,0 +1,43 @@
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+
+  .section-subtitle {
+    padding: 10px 30px;
+    font-size: 2rem;
+    color: var(--lazur);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: rgba(39, 100, 174, 0.1);
+    border-radius: 15px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 2px;
+      background-color: var(--lazur);
+    }
+  }
+
+  .section-title {
+    font-family: 'Unageo', sans-serif;
+    font-size: 2.5rem;
+    color: var(--gagat);
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
