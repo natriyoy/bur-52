@@ -25,6 +25,11 @@ const paths = {
         dest: 'dist/assets/css/',
         watch: 'src/scss/**/*.scss',
     },
+    fonts: { // ДОБАВЬТЕ ЭТОТ БЛОК
+        src: 'src/fonts/**/*.{ttf,woff,woff2,eot,otf}',
+        dest: 'dist/assets/fonts/',
+        watch: 'src/fonts/**/*',
+    },
     assets: {
         src: 'src/assets/**/*',
         dest: 'dist/assets/',
@@ -33,7 +38,6 @@ const paths = {
         src: 'src/images/**/*',
         dest: 'dist/assets/images',
     }
-    // УБЕРИТЕ fonts отсюда - они уже входят в assets
 };
 
 export const html = () =>
@@ -63,6 +67,12 @@ export const styles = () =>
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(bs.stream());
 
+// ДОБАВЬТЕ ЭТУ ЗАДАЧУ ДЛЯ ШРИФТОВ
+export const fonts = () =>
+    gulp.src(paths.fonts.src)
+        .pipe(gulp.dest(paths.fonts.dest))
+        .pipe(bs.stream());
+
 const imagesToWebp = () =>
     gulp.src(paths.images.src, { encoding: false })
         .pipe(newer(paths.images.dest))
@@ -79,11 +89,9 @@ const imagesToMobileWebp = () =>
         }))
         .pipe(gulp.dest(paths.images.dest));
 
-// Копирование всех ассетов (включая шрифты)
+// Копирование ассетов
 export const assets = () =>
     gulp.src(paths.assets.src).pipe(gulp.dest(paths.assets.dest));
-
-// УБЕРИТЕ export const fonts - не нужно отдельной задачи
 
 // Очистка
 export const clean = () => deleteAsync(['dist']);
@@ -101,15 +109,16 @@ export const serve = () => {
 
     gulp.watch(paths.styles.watch, styles);
     gulp.watch(paths.html.watch, html);
+    gulp.watch(paths.fonts.watch, fonts); // ДОБАВЬТЕ ЭТУ СТРОЧКУ
     gulp.watch(paths.assets.src, assets);
     gulp.watch(paths.images.src, imagesToWebp);
     gulp.watch(paths.images.src, imagesToMobileWebp);
 };
 
-// Сборка - убрали fonts из parallel
+// Сборка - добавьте fonts в parallel
 export const build = gulp.series(
     clean,
-    gulp.parallel(styles, html, assets, imagesToWebp, imagesToMobileWebp)
+    gulp.parallel(styles, html, assets, fonts, imagesToWebp, imagesToMobileWebp)
 );
 
 export default gulp.series(build, serve);
