@@ -5,8 +5,9 @@
 
 .container {
   max-width: 1400px;
-  margin: 0 auto;
+
   padding: 0 20px;
+
 }
 
 /* Заголовок страницы */
@@ -197,9 +198,12 @@
 }
 
 .service-card__footer {
-  padding: 0 25px 25px;
+  padding: 0 25px 10px;
   flex-shrink: 0;
+
 }
+
+
 
 .service-card__btn {
   display: block;
@@ -214,12 +218,29 @@
   text-align: center;
   transition: all 0.3s ease;
   font-family: 'montserrat';
+  margin-bottom: 20px;
 }
 
 .service-card__btn:hover {
   background-color: var(--lazur);
   color: white;
 }
+.service-card__btn2 {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--lazur);
+  color: white;
+  text-decoration: none;
+  border: 2px solid var(--lazur);
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-family: 'montserrat';
+
+}
+
 
 /* Блок преимуществ */
 .advantages-section {
@@ -290,6 +311,7 @@
   background: linear-gradient(135deg, var(--lazur) 0%, #1a4a8a 100%);
   border-radius: 20px;
   color: white;
+  margin-bottom: 60px;
 }
 
 .cta-title {
@@ -609,3 +631,4 @@
     width: 50%; /* 2 в ряд */
   }
 }
+

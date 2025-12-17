@@ -22,11 +22,12 @@
 @use 'components/mini_calculator';
 @use 'components/footer';
 @use 'components/chapter';
-
+@use 'components/pod_kluch';
+@use 'components/about2';
 
 :root {
   //--lazur: #ae2727;
-  --lazur: #2764AE;
+  --lazur:  #2764AE;
   --gagat: #3C3C3B;
   --gagat2: rgba(60, 60, 59, 0.2);
 

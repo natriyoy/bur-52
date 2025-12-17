@@ -1,488 +1,419 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Бур-52</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/about2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <style>
-        .about-page {
-            padding: 60px 0;
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Заголовок страницы */
-        .page-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .page-header__subtitle {
-            display: inline-block;
-            font-size: 0.9rem;
-            color: var(--lazur);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            padding: 6px 18px;
-            background-color: rgba(39, 100, 174, 0.1);
-            border-radius: 20px;
-        }
-
-        .page-header__title {
-            font-family: 'montserrat';
-            font-size: 2.5rem;
-            color: var(--gagat);
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .page-header__description {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Основной контент */
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            margin-bottom: 60px;
-        }
-
-        .about-section {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(38, 70, 83, 0.08);
-            border: 1px solid var(--gagat2);
-        }
-
-        .about-section__title {
-            font-family: 'montserrat';
-            font-size: 1.8rem;
-            color: var(--gagat);
-            margin-bottom: 25px;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .about-section__title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--lazur);
-        }
-
-        .about-section__content {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--gagat);
-        }
-
-        .about-section__content p {
-            margin-bottom: 20px;
-        }
-
-        .about-section__content p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Преимущества в виде значков */
-        .advantages-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .advantage-card {
-            flex: 1;
-            min-width: 200px;
-            background: rgba(39, 100, 174, 0.03);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            border: 1px solid var(--gagat2);
-            transition: all 0.3s ease;
-        }
-
-        .advantage-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(39, 100, 174, 0.1);
-            border-color: var(--lazur);
-        }
-
-        .advantage-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--lazur);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .advantage-title {
-            font-family: 'montserrat';
-            font-size: 1.2rem;
-            color: var(--gagat);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .advantage-description {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        /* География работ */
-        .regions-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .region-badge {
-            background: var(--lazur);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .region-badge:hover {
-            background: var(--gagat);
-            transform: translateY(-2px);
-        }
-
-        /* Контактная информация */
-        .contact-info {
-            background: linear-gradient(135deg, rgba(39, 100, 174, 0.05) 0%, rgba(39, 100, 174, 0.02) 100%);
-            border-radius: 16px;
-            padding: 40px;
-            border: 2px solid rgba(39, 100, 174, 0.1);
-        }
-
-        .contact-info__title {
-            font-family: 'montserrat';
-            font-size: 1.8rem;
-            color: var(--gagat);
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .contact-details {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .contact-details__item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid var(--gagat2);
-        }
-
-        .contact-details__item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .contact-details__icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 15px;
-            flex-shrink: 0;
-            color: var(--lazur);
-            font-size: 1.2rem;
-        }
-
-        .contact-details__content h4 {
-            font-family: 'montserrat';
-            font-size: 1.1rem;
-            color: var(--gagat);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .contact-details__content p {
-            color: var(--gagat);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin: 0;
-            opacity: 0.9;
-        }
-
-        .contact-details__link {
-            color: var(--lazur);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .contact-details__link:hover {
-            text-decoration: underline;
-            color: var(--gagat);
-        }
-
-        /* Кнопка CTA */
-        .cta-section {
-            text-align: center;
-            padding: 60px 40px;
-            background: linear-gradient(135deg, var(--lazur) 0%, #1a4a8a 100%);
-            border-radius: 20px;
-            color: white;
-            margin-top: 40px;
-        }
-
-        .cta-title {
-            font-family: 'montserrat';
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .cta-description {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-btn {
-            padding: 16px 35px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            font-family: 'montserrat';
-        }
-
-        .cta-btn.primary {
-            background-color: white;
-            color: var(--lazur);
-        }
-
-        .cta-btn.secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Адаптивность */
-        max-width: 992px {
-
-                          .about-page {
-                              padding: 50px 0;
-                          }
-
-                          .page-header__title {
-                              font-size: 2.2rem;
-                          }
-
-                          .about-section {
-                              padding: 35px 30px;
-                          }
-                      }
-
-        max-width: 768px {
-                          .about-page {
-                              padding: 40px 0;
-                          }
-
-                          .page-header {
-                              margin-bottom: 40px;
-                          }
-
-                          .page-header__title {
-                              font-size: 2rem;
-                          }
-
-                          .page-header__description {
-                              font-size: 1rem;
-                          }
-
-                          .about-content {
-                              gap: 40px;
-                          }
-
-                          .about-section {
-                              padding: 30px 25px;
-                          }
-
-                          .about-section__title {
-                              font-size: 1.6rem;
-                          }
-
-                          .advantage-card {
-                              min-width: 100%;
-                          }
-
-                          .regions-list {
-                              justify-content: center;
-                          }
-
-                          .contact-info {
-                              padding: 30px 25px;
-                          }
-
-                          .cta-section {
-                              padding: 50px 25px;
-                          }
-
-                          .cta-title {
-                              font-size: 2rem;
-                          }
-
-                          .cta-buttons {
-                              flex-direction: column;
-                              gap: 15px;
-                          }
-                      }
-
-        max-width: 576px {
-                          .about-page {
-                              padding: 30px 0;
-                          }
-
-                          .page-header__title {
-                              font-size: 1.8rem;
-                          }
-
-                          .page-header__subtitle {
-                              font-size: 0.85rem;
-                              padding: 5px 15px;
-                          }
-
-                          .about-section {
-                              padding: 25px 20px;
-                          }
-
-                          .about-section__title {
-                              font-size: 1.4rem;
-                          }
-
-                          .contact-details__item {
-                              flex-direction: column;
-                          }
-
-                          .contact-details__icon {
-                              margin-bottom: 10px;
-                          }
-
-                          .cta-title {
-                              font-size: 1.8rem;
-                          }
-
-                          .cta-btn {
-                              padding: 14px 25px;
-                              font-size: 1rem;
-                          }
-                      }
-
-        max-width: 400px {
-                          .region-badge {
-                              padding: 8px 16px;
-                              font-size: 0.9rem;
-                          }
-
-                          .cta-title {
-                              font-size: 1.6rem;
-                          }
-                      }
-    </style>
-    @@include('../components/_header.html')
-    <main class="about-page">
+@@include('../components/_header.html')
+
+<main class="contacts-page">
+    <!-- Герой-секция контактов -->
+    <section class="contacts-hero">
         <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">Свяжитесь с нами</span>
+                </div>
+                <h1 class="hero-title">Контакты компании «Бур-52»</h1>
+                <p class="hero-subtitle">Мы всегда на связи и готовы ответить на ваши вопросы о бурении скважин, рассчитать стоимость и организовать выезд специалиста</p>
+            </div>
+        </div>
+    </section>
 
-                <section class="contact-info">
-                    <h2 class="contact-info__title">Контактная информация</h2>
-
-                    <ul class="contact-details">
-                        <li class="contact-details__item">
-                            <div class="contact-details__icon">🏢</div>
-                            <div class="contact-details__content">
-                                <h4>ИП Глазунов</h4>
-                                <p>Нижегородская область, Городецкий район, село Зарубино</p>
+    <!-- Основная информация о контактах -->
+    <section class="contacts-main">
+        <div class="container">
+            <div class="contacts-grid">
+                <!-- Карточка с основной информацией -->
+                <div class="contact-card primary">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h2 class="card-title">ИП Глазунов</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="contact-item">
+                            <div class="item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
-                        </li>
-
-                        <li class="contact-details__item">
-                            <div class="contact-details__icon">📞</div>
-                            <div class="contact-details__content">
-                                <h4>Телефон</h4>
-                                <p><a href="tel:89200521982" class="contact-details__link">8 (920) 052-19-82</a></p>
+                            <div class="item-content">
+                                <h3 class="item-title">Адрес</h3>
+                                <p class="item-text">Нижегородская область, Городецкий район, село Зарубино</p>
                             </div>
-                        </li>
+                        </div>
 
-                        <li class="contact-details__item">
-                            <div class="contact-details__icon">✉️</div>
-                            <div class="contact-details__content">
-                                <h4>Электронная почта</h4>
-                                <p><a href="mailto:nn.glazunov@yandex.ru" class="contact-details__link">nn.glazunov@yandex.ru</a></p>
+                        <div class="contact-item">
+                            <div class="item-icon">
+                                <i class="fas fa-phone"></i>
                             </div>
-                        </li>
+                            <div class="item-content">
+                                <h3 class="item-title">Телефон</h3>
+                                <div class="phone-numbers">
+                                    <a href="tel:89200521982" class="phone-link">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>8 (920) 052-19-82</span>
+                                    </a>
+                                    <a href="tel:+79505678910" class="phone-link">
+                                        <i class="fas fa-phone"></i>
+                                        <span>+7 (950) 567-89-10</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-                        <li class="contact-details__item">
-                            <div class="contact-details__icon">🕐</div>
-                            <div class="contact-details__content">
-                                <h4>Режим работы</h4>
-                                <p>Пн-Пт: 8:00-18:00
-                                    Сб: 9:00-16:00
-                                    Вс: по договоренности</p>
+                        <div class="contact-item">
+                            <div class="item-icon">
+                                <i class="fas fa-envelope"></i>
                             </div>
-                        </li>
-                    </ul>
-                </section>
+                            <div class="item-content">
+                                <h3 class="item-title">Электронная почта</h3>
+                                <div class="email-links">
+                                    <a href="mailto:nn.glazunov@yandex.ru" class="email-link">
+                                        <i class="fas fa-paper-plane"></i>
+                                        <span>nn.glazunov@yandex.ru</span>
+                                    </a>
+                                    <a href="mailto:info@bur-52.ru" class="email-link">
+                                        <i class="fas fa-envelope-open-text"></i>
+                                        <span>info@bur-52.ru</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="item-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title">Режим работы</h3>
+                                <div class="schedule">
+                                    <div class="schedule-item">
+                                        <span class="day">Понедельник - Пятница</span>
+                                        <span class="time">8:00 - 18:00</span>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <span class="day">Суббота</span>
+                                        <span class="time">9:00 - 16:00</span>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <span class="day">Воскресенье</span>
+                                        <span class="time">по договоренности</span>
+                                    </div>
+                                    <div class="schedule-item highlight">
+                                        <span class="day">Экстренные вызовы</span>
+                                        <span class="time">круглосуточно</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <p class="footer-note"><i class="fas fa-star"></i> Рекомендуем звонить заранее для записи на выезд специалиста</p>
+                    </div>
+                </div>
+
+                <!-- Карточка с быстрыми действиями -->
+                <div class="contact-card actions">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h2 class="card-title">Быстрые действия</h2>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a href="tel:89200521982" class="action-btn phone">
+                            <div class="btn-icon">
+                                <i class="fas fa-phone-volume"></i>
+                            </div>
+                            <div class="btn-content">
+                                <h3>Позвонить сейчас</h3>
+                                <p>Немедленная консультация</p>
+                            </div>
+                            <div class="btn-arrow">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/79200521982" target="_blank" class="action-btn whatsapp">
+                            <div class="btn-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="btn-content">
+                                <h3>Написать в WhatsApp</h3>
+                                <p>Быстрый ответ в мессенджере</p>
+                            </div>
+                            <div class="btn-arrow">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </a>
+
+                        <a href="#calculator" class="action-btn calculator">
+                            <div class="btn-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="btn-content">
+                                <h3>Рассчитать стоимость</h3>
+                                <p>Онлайн-калькулятор скважины</p>
+                            </div>
+                            <div class="btn-arrow">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </a>
+
+                        <a href="#request-form" class="action-btn form">
+                            <div class="btn-icon">
+                                <i class="fas fa-file-signature"></i>
+                            </div>
+                            <div class="btn-content">
+                                <h3>Оставить заявку</h3>
+                                <p>Заполнить форму обратной связи</p>
+                            </div>
+                            <div class="btn-arrow">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <h3 class="social-title">Мы в социальных сетях</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon vk">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                            <a href="#" class="social-icon telegram">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="#" class="social-icon youtube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- География работ -->
+    <section class="geography-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">География работ</h2>
+                <p class="section-subtitle">Мы работаем по всей Нижегородской области и соседним регионам</p>
             </div>
 
-    </main>
-    @@include('../components/_footer.html')
+            <div class="geography-content">
+                <div class="regions-map">
+                    <div class="map-visual">
+                        <div class="map-point" style="top: 20%; left: 30%;" data-region="Ковернинский">
+                            <div class="point-dot"></div>
+                        </div>
+                        <div class="map-point" style="top: 35%; left: 50%;" data-region="Городецкий">
+                            <div class="point-dot"></div>
+                        </div>
+                        <div class="map-point" style="top: 40%; left: 65%;" data-region="Чкаловский">
+                            <div class="point-dot"></div>
+                        </div>
+                        <div class="map-point" style="top: 55%; left: 45%;" data-region="Воскресенский">
+                            <div class="point-dot"></div>
+                        </div>
+                        <div class="map-point" style="top: 60%; left: 60%;" data-region="Борский">
+                            <div class="point-dot"></div>
+                        </div>
+                        <div class="map-point" style="top: 45%; left: 40%;" data-region="Семеновский">
+                            <div class="point-dot"></div>
+                        </div>
+                        <div class="map-center" data-region="Зарубино">
+                            <div class="center-dot"></div>
+                            <div class="center-label">Мы здесь</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="regions-list">
+                    <h3 class="regions-title">Основные районы работы</h3>
+                    <div class="regions-tags">
+                        <span class="region-tag primary">Ковернинский район</span>
+                        <span class="region-tag primary">Городецкий район</span>
+                        <span class="region-tag primary">Чкаловский район</span>
+                        <span class="region-tag primary">Воскресенский район</span>
+                        <span class="region-tag primary">Борский район</span>
+                        <span class="region-tag primary">Семеновский район</span>
+                        <span class="region-tag secondary">Кстовский район</span>
+                        <span class="region-tag secondary">Лысковский район</span>
+                        <span class="region-tag secondary">Сокольский район</span>
+                        <span class="region-tag secondary">Краснобаковский район</span>
+                    </div>
+
+                    <div class="regions-note">
+                        <div class="note-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <p>Также возможен выезд в соседние регионы. Стоимость рассчитывается индивидуально в зависимости от удаленности объекта.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section class="contact-form-section" id="request-form">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-intro">
+                    <h2 class="form-title">Остались вопросы?</h2>
+                    <p class="form-subtitle">Заполните форму и мы свяжемся с вами в течение 30 минут</p>
+
+                    <div class="form-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Бесплатная консультация</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Расчет стоимости под ключ</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Выезд специалиста на участок</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Гарантия на все работы</span>
+                        </div>
+                    </div>
+
+                    <div class="form-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-text">лет опыта</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-text">скважин</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-text">поддержка</div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Ваше имя *</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Телефон *</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Электронная почта</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="example@mail.ru">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location" class="form-label">Местоположение объекта</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="location" name="location" placeholder="Населенный пункт, район">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Сообщение</label>
+                        <div class="textarea-with-icon">
+                            <i class="fas fa-comment-dots"></i>
+                            <textarea id="message" name="message" rows="4" placeholder="Опишите вашу задачу, укажите желаемые параметры скважины или задайте вопрос..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement" class="checkbox-label">
+                            Я соглашаюсь с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Отправить заявку</span>
+                    </button>
+
+                    <p class="form-note">* Нажимая кнопку, вы подтверждаете свое согласие на обработку персональных данных. Мы гарантируем конфиденциальность предоставленной информации.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дополнительная информация -->
+    <section class="additional-info">
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="info-title">Как нас найти</h3>
+                    <p class="info-text">Наш офис расположен в селе Зарубино, Городецкого района. Для навигации используйте координаты: 56.6478° с.ш., 43.4724° в.д.</p>
+                    <a href="#" class="info-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Открыть в Яндекс.Картах</span>
+                    </a>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="info-title">Документы и лицензии</h3>
+                    <p class="info-text">Вся деятельность осуществляется в соответствии с законодательством РФ. Имеются все необходимые лицензии и разрешения.</p>
+                    <a href="#" class="info-link">
+                        <i class="fas fa-download"></i>
+                        <span>Скачать документы</span>
+                    </a>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="info-title">Сотрудничество</h3>
+                    <p class="info-text">Мы открыты к сотрудничеству с подрядчиками и партнерами. Предлагаем выгодные условия для строительных компаний.</p>
+                    <a href="mailto:partner@bur-52.ru" class="info-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Написать о сотрудничестве</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include('../components/_footer.html')
 </body>
 </html>

@@ -9,17 +9,13 @@
 </head>
 <body>
 @@include('../components/_header.html')
-<!-- Основной контент страницы -->
 <main class="services-page">
     <div class="container">
-        <!-- Заголовок страницы -->
-        <div class="page-header">
-            <span class="page-subtitle">Наша специализация</span>
-            <h1 class="page-title">Все услуги</h1>
-            <p class="page-description">Полный спектр услуг по водоснабжению от проектирования до обслуживания</p>
-        </div>
-
-        <!-- Навигация по услугам -->
+        @@include('../components/_chapter.html', {
+        "subtitle": "Наша специализация",
+        "title": "Все услуги",
+        "description": "Полный спектр услуг по водоснабжению от проектирования до обслуживания"
+        })
         <nav class="services-nav">
             <ul class="services-nav__list">
                 <li><a href="#drilling" class="services-nav__link">Бурение скважин</a></li>

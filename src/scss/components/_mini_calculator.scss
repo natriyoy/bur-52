@@ -254,8 +254,6 @@
 }
 
 .btn-primary:hover {
-  background-color: white;
-  color: var(--lazur);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(39, 100, 174, 0.2);
 }
@@ -267,8 +265,9 @@
 }
 
 .btn-secondary:hover {
-  background-color: var(--gagat);
+  background-color: var(--lazur);
   color: white;
+  border-color: var(--lazur);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(60, 60, 59, 0.1);
 }

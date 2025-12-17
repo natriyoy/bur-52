@@ -11,13 +11,12 @@
 @@include('../components/_header.html')
 <main class="services-page">
     <div class="container">
-        <!-- Заголовок страницы -->
-        <div class="page-header">
-            <span class="page-header__subtitle">Полный спектр услуг</span>
-            <h1 class="page-header__title">Наши услуги по бурению скважин</h1>
-            <p class="page-header__description">Профессиональные решения для водоснабжения вашего участка. Работаем с 2010 года, выполнили более 500 успешных проектов.</p>
-        </div>
-
+        @@include('../components/_chapter.html', {
+        "subtitle": "Полный спектр услуг",
+        "title": "Наши услуги по бурению скважин",
+        "description": "Профессиональные решения для водоснабжения вашего участка. Работаем с 2010 года, выполнили более 500 успешных проектов."
+        })
+        @@include('../components/_pod_kluch.html')
         <!-- Основные услуги -->
         <div class="services-grid">
             <!-- Карточка 1: Бурение скважин -->
@@ -56,7 +55,10 @@
                     </div>
 
                     <div class="service-card__footer">
-                        <a href="#contact" class="service-card__btn">Заказать бурение</a>
+                        <a href="#contact" class="service-card__btn2">Заказать бурение</a>
+                    </div>
+                    <div class="service-card__footer">
+                        <a href="#contact" class="service-card__btn">Подробнее</a>
                     </div>
                 </article>
             </div>
@@ -97,7 +99,10 @@
                     </div>
 
                     <div class="service-card__footer">
-                        <a href="#contact" class="service-card__btn">Заказать монтаж</a>
+                        <a href="#contact" class="service-card__btn2">Заказать монтаж</a>
+                    </div>
+                    <div class="service-card__footer">
+                        <a href="#contact" class="service-card__btn">Подробнее</a>
                     </div>
                 </article>
             </div>
@@ -137,7 +142,10 @@
                     </div>
 
                     <div class="service-card__footer">
-                        <a href="#contact" class="service-card__btn">Вызвать специалиста</a>
+                        <a href="#contact" class="service-card__btn2">Вызвать специалиста</a>
+                    </div>
+                    <div class="service-card__footer">
+                        <a href="#contact" class="service-card__btn">Подробнее</a>
                     </div>
                 </article>
             </div>
@@ -178,7 +186,10 @@
                     </div>
 
                     <div class="service-card__footer">
-                        <a href="#contact" class="service-card__btn">Заказать обустройство</a>
+                        <a href="#contact" class="service-card__btn2">Заказать обустройство</a>
+                    </div>
+                    <div class="service-card__footer">
+                        <a href="#contact" class="service-card__btn">Подробнее</a>
                     </div>
                 </article>
             </div>
@@ -192,21 +203,21 @@
                                 <path d="M40 8H8c-2.21 0-4 1.79-4 4v24c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4V12c0-2.21-1.79-4-4-4zm-4 24l-12-8v8l-12-8v16h24V12H12v16l12-8v8l12-8v16z"/>
                             </svg>
                         </div>
-                        <span class="service-card__subtitle">Диагностика</span>
-                        <h3 class="service-card__title">Видеодиагностика скважины</h3>
+                        <span class="service-card__subtitle">Промышленность</span>
+                        <h3 class="service-card__title">Промышленные скважины</h3>
                     </div>
 
                     <div class="service-card__content">
                         <div class="service-card__description">
-                            <p>Обследование скважины видеокамерой для определения состояния, обнаружения повреждений и загрязнений.</p>
+                            <p>Бурение глубоких скважин на воду для предприятий и производств</p>
                         </div>
 
                         <ul class="service-card__features">
-                            <li>Определение глубины и уровня воды</li>
-                            <li>Обнаружение трещин в трубах</li>
-                            <li>Выявление засоров и отложений</li>
-                            <li>Видеозапись обследования</li>
-                            <li>Заключение специалиста</li>
+                            <li>Глубина бурения до 300 метров и более</li>
+                            <li>Дебит скважины от 5 до 100+ м³/час</li>
+                            <li>Полный комплект документации (паспорт скважины)</li>
+                            <li>Использование промышленных обсадных колонн</li>
+                            <li>Соблюдение всех норм и требований (СанПиН, СНиП)</li>
                         </ul>
 
                         <div class="service-card__meta-wrapper">
@@ -215,10 +226,14 @@
                                 <div class="service-card__time">Срок: 1-2 часа</div>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="service-card__footer">
-                        <a href="#contact" class="service-card__btn">Заказать диагностику</a>
+                        <a href="#contact" class="service-card__btn2">Заказать диагностику</a>
+                    </div>
+                    <div class="service-card__footer">
+                        <a href="#contact" class="service-card__btn">Подробнее</a>
                     </div>
                 </article>
             </div>
@@ -258,7 +273,10 @@
                     </div>
 
                     <div class="service-card__footer">
-                        <a href="#contact" class="service-card__btn">Заказать консультацию</a>
+                        <a href="#contact" class="service-card__btn2">Заказать консультацию</a>
+                    </div>
+                    <div class="service-card__footer">
+                        <a href="#contact" class="service-card__btn">Подробнее</a>
                     </div>
                 </article>
             </div>
@@ -317,19 +335,17 @@
 
             <div class="cta-buttons">
                 <a href="tel:89200521982" class="cta-btn primary">Позвонить: 8 (920) 052-19-82</a>
-                <a href="#contact-form" class="cta-btn secondary">Оставить заявку</a>
+                <a href="services_prise.html#zayvka" class="cta-btn secondary">Оставить заявку</a>
             </div>
         </section>
     </div>
 
-        <div class="container">
-            <!-- Заголовок страницы -->
-            <div class="contact-header">
-                <span class="contact-header__subtitle">Оставить заявку</span>
-                <h1 class="contact-header__title">Заявка на бурение скважины</h1>
-                <p class="contact-header__description">Заполните форму ниже и наш специалист свяжется с вами в течение 30 минут для бесплатной консультации и расчета стоимости</p>
-            </div>
-
+        <div class="container" id="zayvka">
+            @@include('../components/_chapter.html', {
+            "subtitle": "Оставить заявку",
+            "title": "Заявка на бурение скважины",
+            "description": "Заполните форму ниже и наш специалист свяжется с вами в течение 30 минут для бесплатной консультации и расчета стоимости"
+            })
             <div class="contact-container">
                 <!-- Левый блок: Контактная информация -->
                 <div class="contact-info">
