@@ -10,15 +10,17 @@
 </head>
 <body>
 @@include('../components/_header.html')
-<section id="calculator" class="calculator-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-subtitle">Онлайн калькулятор</span>
-            <h2 class="section-title">Рассчитайте стоимость скважины</h2>
-            <p class="section-description">Предварительный расчет стоимости бурения скважины на вашем участке</p>
-        </div>
 
-        <div class="calculator">
+<section id="calculator" class="calculator-section">
+
+    <div class="container">
+
+        @@include('../components/_chapter.html', {
+        "subtitle": "Онлайн калькулятор",
+        "title": "Рассчитайте стоимость скважины",
+        "description": "Предварительный расчет стоимости бурения скважины на вашем участке"
+        })
+        <div class="calculator block">
             <div class="calculator-form">
                 <!-- Глубина скважины -->
                 <div class="form-group">
@@ -68,7 +70,9 @@
                         <span class="label-text">Дополнительные услуги</span>
                         <span class="label-text-small">(необязательно)</span>
                     </div>
+
                     <div class="checkbox-group">
+                        <div class="checkbox-group2">
                         <div class="checkbox-item">
                             <input type="checkbox" id="service1" name="services" value="pump">
                             <label for="service1" class="checkbox-label">
@@ -83,6 +87,8 @@
                                 <span class="checkbox-price">+ 8 000 ₽</span>
                             </label>
                         </div>
+                    </div>
+                        <div class="checkbox-group2">
                         <div class="checkbox-item">
                             <input type="checkbox" id="service3" name="services" value="equipment">
                             <label for="service3" class="checkbox-label">
@@ -96,6 +102,7 @@
                                 <span class="checkbox-text">Видеодиагностика</span>
                                 <span class="checkbox-price">+ 5 000 ₽</span>
                             </label>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -129,469 +136,24 @@
                     <div class="result-notice">
                         <p><strong>Важно:</strong> Это предварительный расчет. Точная стоимость будет определена после выезда специалиста на участок.</p>
                     </div>
-
+<div style="display: flex; gap: 10px;">
                     <button class="btn btn-primary btn-block" id="calculateBtn">Получить точный расчет</button>
+                    <a href="#zayvka" class="btn btn-primary btn-block" >Подать заявку</a>
+                </div>
                 </div>
             </div>
         </div>
+
     </div>
+
 </section>
+
+<div id="zayvka" style="margin-bottom: 20px">
+@@include('../components/_feedback.html', {
+"title": "Подайте заявку",
+"disk": "Заполните форму и мы свяжемся с вами в течение 30 минут"
+})
+</div>
 @@include('../components/_footer.html')
-<style>
-    .calculator-section {
-        padding: 80px 0;
-        background-color: #f8f9fa;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .section-header {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .section-subtitle {
-        display: inline-block;
-        font-size: 1rem;
-        color: var(--lazur); /* фирменный синий */
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-        position: relative;
-    }
-
-    .section-subtitle::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 2px;
-        background-color: var(--lazur); /* фирменный синий */
-    }
-
-    .section-title {
-
-        font-size: 2.5rem;
-        color: var(--gagat); /* фирменный темно-серый */
-        margin-bottom: 15px;
-        line-height: 1.2;
-    }
-
-    .section-description {
-        font-size: 1.1rem;
-        color: #666;
-        max-width: 600px;
-        margin: 0 auto;
-        line-height: 1.6;
-    }
-
-    .calculator {
-        background: white;
-        border-radius: 20px;
-        padding: 40px;
-        box-shadow: 0 8px 30px rgba(38, 70, 83, 0.1);
-        max-width: 800px;
-        margin: 0 auto;
-        border: 1px solid rgba(60, 60, 59, 0.1); /* gagat с прозрачностью */
-    }
-
-    .calculator-form {
-        width: 100%;
-    }
-
-    .form-group {
-        margin-bottom: 40px;
-        padding-bottom: 30px;
-        border-bottom: 1px solid rgba(60, 60, 59, 0.1); /* gagat2 */
-    }
-
-    .form-group:last-child {
-        border-bottom: none;
-        margin-bottom: 30px;
-        padding-bottom: 0;
-    }
-
-    .form-label {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .label-text {
-
-        font-size: 1.2rem;
-        color: var(--gagat); /* фирменный темно-серый */
-        font-weight: 600;
-    }
-
-    .label-text-small {
-        font-size: 0.9rem;
-        color: #666;
-        margin-left: 10px;
-    }
-
-    .label-value {
-        font-size: 1.3rem;
-        color: var(--lazur); /* фирменный синий */
-        font-weight: 700;
-    }
-
-    .range-slider {
-        position: relative;
-        margin: 30px 0 10px;
-    }
-
-    .slider {
-        width: 100%;
-        height: 6px;
-        -webkit-appearance: none;
-        background: linear-gradient(to right, var(--lazur) 0%, var(--lazur) 25%, var(--gagat2) 25%, var(--gagat2) 100%); /* lazur и gagat2 */
-        border-radius: 3px;
-        outline: none;
-        cursor: pointer;
-    }
-
-    .slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background: white;
-        border: 3px solid var(--lazur); /* фирменный синий */
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(39, 100, 174, 0.3);
-        transition: all 0.3s ease;
-    }
-
-    .slider::-webkit-slider-thumb:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 16px rgba(39, 100, 174, 0.4);
-        border-color: var(--gagat); /* темно-серый при наведении */
-    }
-
-    .slider-ticks {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 15px;
-        font-size: 0.9rem;
-        color: var(--gagat); /* фирменный темно-серый */
-    }
-
-    .slider-ticks span {
-        position: relative;
-        padding-top: 20px;
-    }
-
-    .slider-ticks span::before {
-        content: '';
-        position: absolute;
-        top: -5px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 10px;
-        background-color: var(--gagat2); /* полупрозрачный темно-серый */
-    }
-
-    .radio-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .radio-group {
-        width: 100%;
-    }
-
-    .radio-group input[type="radio"] {
-        display: none;
-    }
-
-    .radio-label {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px 20px;
-        background: white;
-        border: 2px solid var(--gagat2); /* полупрозрачный темно-серый */
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .radio-group input[type="radio"]:checked + .radio-label {
-        border-color: var(--lazur); /* фирменный синий */
-        background-color: rgba(39, 100, 174, 0.05); /* lazur с прозрачностью */
-    }
-
-    .radio-text {
-        font-weight: 500;
-        color: var(--gagat); /* фирменный темно-серый */
-    }
-
-    .radio-price {
-        color: var(--lazur); /* фирменный синий */
-        font-weight: 600;
-    }
-
-    .checkbox-group {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .checkbox-item {
-        width: 100%;
-    }
-
-    .checkbox-item input[type="checkbox"] {
-        display: none;
-    }
-
-    .checkbox-label {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px 20px;
-        background: white;
-        border: 2px solid var(--gagat2); /* полупрозрачный темно-серый */
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .checkbox-item input[type="checkbox"]:checked + .checkbox-label {
-        border-color: var(--lazur); /* фирменный синий */
-        background-color: rgba(39, 100, 174, 0.05); /* lazur с прозрачностью */
-    }
-
-    .checkbox-text {
-        font-weight: 500;
-        color: var(--gagat); /* фирменный темно-серый */
-    }
-
-    .checkbox-price {
-        color: var(--lazur); /* фирменный синий */
-        font-weight: 600;
-    }
-
-    .calculator-result {
-        background: linear-gradient(135deg, rgba(39, 100, 174, 0.05) 0%, rgba(39, 100, 174, 0.02) 100%); /* lazur градиент */
-        border-radius: 15px;
-        padding: 30px;
-        margin-top: 30px;
-        border: 2px solid rgba(39, 100, 174, 0.1); /* lazur с прозрачностью */
-    }
-
-    .result-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 25px;
-        padding-bottom: 20px;
-        border-bottom: 2px solid rgba(39, 100, 174, 0.1); /* lazur с прозрачностью */
-    }
-
-    .result-title {
-
-        font-size: 1.4rem;
-        color: var(--gagat); /* фирменный темно-серый */
-        font-weight: 600;
-    }
-
-    .result-price {
-        font-size: 2rem;
-        color: var(--lazur); /* фирменный синий */
-        font-weight: 700;
-    }
-
-    .result-details {
-        margin-bottom: 25px;
-    }
-
-    .result-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px 0;
-        color: var(--gagat); /* фирменный темно-серый */
-        font-size: 0.95rem;
-        opacity: 0.8;
-    }
-
-    .result-row:not(:last-child) {
-        border-bottom: 1px solid var(--gagat2); /* полупрозрачный темно-серый */
-    }
-
-    .result-total {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 0 0;
-        margin-top: 15px;
-        border-top: 2px solid rgba(39, 100, 174, 0.2); /* lazur с прозрачностью */
-        font-weight: 700;
-        color: var(--gagat); /* фирменный темно-серый */
-        font-size: 1.1rem;
-    }
-
-    .result-notice {
-        background: white;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 25px;
-        border-left: 4px solid var(--lazur); /* фирменный синий */
-    }
-
-    .result-notice p {
-        margin: 0;
-        font-size: 0.9rem;
-        color: var(--gagat); /* фирменный темно-серый */
-        line-height: 1.5;
-        opacity: 0.8;
-    }
-
-    .result-notice strong {
-        color: var(--lazur); /* фирменный синий */
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 16px 32px;
-        background-color: var(--lazur); /* фирменный синий */
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        border: 2px solid var(--lazur); /* фирменный синий */
-        cursor: pointer;
-
-        text-align: center;
-    }
-
-    .btn:hover {
-        background-color: transparent;
-        color: var(--lazur); /* фирменный синий */
-    }
-
-    .btn-block {
-        display: block;
-        width: 100%;
-    }
-
-    .btn-primary {
-        background-color: var(--lazur); /* фирменный синий */
-        color: white;
-    }
-
-    .btn-primary:hover {
-        background-color: transparent;
-        border-color: var(--gagat); /* фирменный темно-серый */
-        color: var(--gagat); /* фирменный темно-серый */
-    }
-
-    /* Адаптивность */
-    @media (max-width: 768px) {
-        .calculator-section {
-            padding: 60px 0;
-        }
-
-        .section-title {
-            font-size: 2rem;
-        }
-
-        .calculator {
-            padding: 30px 25px;
-        }
-
-        .form-label {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .label-value {
-            font-size: 1.2rem;
-        }
-
-        .result-header {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .result-price {
-            font-size: 1.8rem;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .calculator-section {
-            padding: 40px 0;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-        }
-
-        .calculator {
-            padding: 25px 20px;
-        }
-
-        .slider::-webkit-slider-thumb {
-            width: 24px;
-            height: 24px;
-        }
-
-        .radio-label,
-        .checkbox-label {
-            padding: 14px 16px;
-        }
-
-        .calculator-result {
-            padding: 25px 20px;
-        }
-
-        .result-price {
-            font-size: 1.6rem;
-        }
-
-        .btn {
-            padding: 14px 24px;
-            font-size: 1rem;
-        }
-    }
-
-    /* Для очень маленьких экранов */
-    @media (max-width: 400px) {
-        .slider-ticks {
-            font-size: 0.8rem;
-        }
-
-        .slider-ticks span {
-            padding-top: 18px;
-        }
-
-        .radio-text,
-        .checkbox-text {
-            font-size: 0.9rem;
-        }
-
-        .radio-price,
-        .checkbox-price {
-            font-size: 0.9rem;
-        }
-    }
-</style>
 </body>
 </html>

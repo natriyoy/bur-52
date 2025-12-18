@@ -1,12 +1,12 @@
 .services-page {
   padding: 60px 0;
-  background-color: #f8f9fa;
+
 }
 
 .container {
   max-width: 1400px;
 
-  padding: 0 20px;
+  padding: 0;
 
 }
 
@@ -50,7 +50,7 @@
 .services-grid {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -15px 60px -15px; /* Отрицательные margin для создания gap */
+  margin: 0 -15px 0px -15px; /* Отрицательные margin для создания gap */
 }
 
 .services-grid-item {
@@ -62,12 +62,8 @@
 
 /* Карточка услуги */
 .service-card-full {
-  background: white;
-  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(38, 70, 83, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid #e9ecef;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -243,15 +239,12 @@
 
 
 /* Блок преимуществ */
-.advantages-section {
-  background: white;
-  border-radius: 20px;
+.advantages-section2 {
   padding: 50px;
-  margin-bottom: 60px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
 }
 
-.advantages-title {
+.advantages-title2 {
   text-align: center;
 
   font-size: 2rem;
@@ -260,20 +253,20 @@
   font-weight: 700;
 }
 
-.advantages-grid {
+.advantages-grid2 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -20px;
 }
 
-.advantages-grid-item {
+.advantages-grid-item2 {
   width: 25%; /* 4 в ряд на десктопе */
   padding: 0 20px 30px 20px;
   box-sizing: border-box;
   text-align: center;
 }
 
-.advantage-icon {
+.advantage-icon2 {
   width: 80px;
   height: 80px;
   background-color: rgba(39, 100, 174, 0.1);
@@ -284,13 +277,13 @@
   margin: 0 auto 20px;
 }
 
-.advantage-icon svg {
+.advantage-icon2 svg {
   width: 40px;
   height: 40px;
   fill: var(--lazur);
 }
 
-.advantage-title {
+.advantage-title2 {
 
   font-size: 1.3rem;
   color: var(--gagat);
@@ -298,7 +291,7 @@
   font-weight: 600;
 }
 
-.advantage-description {
+.advantage-description2 {
   color: #666;
   line-height: 1.5;
   font-size: 0.95rem;

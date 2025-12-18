@@ -118,10 +118,10 @@
 }
 
 /* Контакты в футере */
-.footer-contacts {
+.footer-contacts2 {
   display: flex;
   flex-direction: column;
-
+  margin-bottom: 12px;
 }
 
 .contact-item {
@@ -138,20 +138,21 @@
   font-size: 1.1rem;
 }
 
-.contact-info2 {
+.contact-info22 {
   display: flex;
   flex-direction: column;
+  margin-bottom: 12px;
 }
 
-.contact-info2 a,
-.contact-info2 span {
-  color: white;
+.contact-info22 a,
+.contact-info22 span {
+  color: rgba(255,255,255,.8);;
   text-decoration: none;
   font-size: 0.95rem;
   line-height: 1.4;
 }
 
-.contact-info2 a:hover {
+.contact-info22 a:hover {
   color: var(--lazur);
 }
 

@@ -7,185 +7,115 @@
     <link rel="stylesheet" href="assets/css/main.css">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<section class="contacts-hero2">
-
     @@include('../components/_header2.html', {
-    "badgeText": "Свяжитесь с нами",
-    "title": "Контакты компании «Бур-52»",
+    "badgeText": "Контакты",
+    "title": "Контакты компании",
     "titleColor": "white",
-    "subtitle": "Мы всегда на связи и готовы ответить на ваши вопросы о бурении скважин, рассчитать стоимость и организовать выезд специалиста"
+    "subtitle": "Свяжитесь с нами любым удобным способом"
     })
 
-</section>
-<main class="contacts-page">
 
-    <!-- Основная информация о контактах -->
-    <section class="contacts-main">
 
-        <div class="container">
-
-            <div class="contacts-grid">
-                <!-- Карточка с основной информацией -->
-                <div class="contact-card primary">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-building"></i>
+<main class="contact-content__page">
+    <section class="contact-content__main">
+        <div class="contact-content__container">
+            <div class="contact-card block">
+                <!-- Реквизиты -->
+                <div class="contact-card__section">
+                    <h2 class="contact-card__title">
+                        <i class="fas fa-building"></i>
+                        Реквизиты
+                    </h2>
+                    <div class="contact-item2">
+                        <div class="contact-item2__icon">
+                            <i class="fas fa-user-tie"></i>
                         </div>
-                        <h2 class="card-title">ИП Глазунов</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="contact-item">
-                            <div class="item-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="item-content">
-                                <h3 class="item-title">Адрес</h3>
-                                <p class="item-text">Нижегородская область, Городецкий район, село Зарубино</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="item-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="item-content">
-                                <h3 class="item-title">Телефон</h3>
-                                <div class="phone-numbers">
-                                    <a href="tel:89200521982" class="phone-link">
-                                        <i class="fas fa-mobile-alt"></i>
-                                        <span>8 (920) 052-19-82</span>
-                                    </a>
-                                    <a href="tel:+79505678910" class="phone-link">
-                                        <i class="fas fa-phone"></i>
-                                        <span>+7 (950) 567-89-10</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="item-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="item-content">
-                                <h3 class="item-title">Электронная почта</h3>
-                                <div class="email-links">
-                                    <a href="mailto:nn.glazunov@yandex.ru" class="email-link">
-                                        <i class="fas fa-paper-plane"></i>
-                                        <span>nn.glazunov@yandex.ru</span>
-                                    </a>
-                                    <a href="mailto:info@bur-52.ru" class="email-link">
-                                        <i class="fas fa-envelope-open-text"></i>
-                                        <span>info@bur-52.ru</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="item-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="item-content">
-                                <h3 class="item-title">Режим работы</h3>
-                                <div class="schedule">
-                                    <div class="schedule-item">
-                                        <span class="day">Понедельник - Воскресенье</span>
-                                        <span class="time">Круглосуточно</span>
-                                    </div>
-
-                                </div>
-                            </div>
+                        <div class="contact-item2__content">
+                            <div class="contact-item2__label">Индивидуальный предприниматель</div>
+                            <div class="contact-item2__value">Глазунов Николай Николаевич</div>
                         </div>
                     </div>
-
-                    <div class="card-footer">
-                        <p class="footer-note"><i class="fas fa-star"></i> Рекомендуем звонить заранее для записи на выезд специалиста</p>
+                    <div class="contact-item2">
+                        <div class="contact-item2__icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <div class="contact-item2__content">
+                            <div class="contact-item2__label">ИНН</div>
+                            <div class="contact-item2__value">524806595011</div>
+                        </div>
+                    </div>
+                    <div class="contact-item2">
+                        <div class="contact-item2__icon">
+                            <i class="fas fa-file-certificate"></i>
+                        </div>
+                        <div class="contact-item2__content">
+                            <div class="contact-item2__label">ОГРНИП</div>
+                            <div class="contact-item2__value">309524811100019</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Карточка с быстрыми действиями -->
-                <div class="contact-card actions">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-bolt"></i>
+                <!-- Адрес -->
+                <div class="contact-card__section">
+                    <h2 class="contact-card__title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Адрес
+                    </h2>
+                    <div class="contact-item2">
+                        <div class="contact-item2__icon">
+                            <i class="fas fa-location-dot"></i>
                         </div>
-                        <h2 class="card-title">Быстрые действия</h2>
+                        <div class="contact-item2__content">
+                            <div class="contact-item2__label">Юридический адрес</div>
+                            <div class="contact-item2__value">Нижегородская область, Городецкий район, село Зарубино</div>
+                        </div>
                     </div>
-
-                    <div class="action-buttons">
-                        <a href="tel:89200521982" class="action-btn phone">
-                            <div class="btn-icon">
-                                <i class="fas fa-phone-volume"></i>
-                            </div>
-                            <div class="btn-content">
-                                <h3>Позвонить сейчас</h3>
-                                <p>Немедленная консультация</p>
-                            </div>
-                            <div class="btn-arrow">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </a>
-
-                        <a href="https://wa.me/79200521982" target="_blank" class="action-btn whatsapp">
-                            <div class="btn-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="btn-content">
-                                <h3>Написать в Telegram</h3>
-                                <p>Быстрый ответ в мессенджере</p>
-                            </div>
-                            <div class="btn-arrow">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </a>
-
-                        <a href="#calculator" class="action-btn calculator">
-                            <div class="btn-icon">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                            <div class="btn-content">
-                                <h3>Рассчитать стоимость</h3>
-                                <p>Онлайн-калькулятор скважины</p>
-                            </div>
-                            <div class="btn-arrow">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </a>
-
-                        <a href="#request-form" class="action-btn form">
-                            <div class="btn-icon">
-                                <i class="fas fa-file-signature"></i>
-                            </div>
-                            <div class="btn-content">
-                                <h3>Оставить заявку</h3>
-                                <p>Заполнить форму обратной связи</p>
-                            </div>
-                            <div class="btn-arrow">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </a>
+                    <div class="contact-item2">
+                        <div class="contact-item2__icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="contact-item2__content">
+                            <div class="contact-item2__label">Производственная база</div>
+                            <div class="contact-item2__value">Собственная техника в Городецком районе</div>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="social-links">
-                        <h3 class="social-title">Мы в социальных сетях</h3>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon vk">
-                                <i class="fab fa-vk"></i>
-                            </a>
-                            <a href="#" class="social-icon telegram">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                            <a href="#" class="social-icon youtube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="#" class="social-icon instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+                <!-- Телефоны -->
+                <div class="contact-card__section">
+                    <h2 class="contact-card__title">
+                        <i class="fas fa-phone"></i>
+                        Телефон
+                    </h2>
+                    <div class="contact-item2">
+                        <div class="contact-item2__icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="contact-item2__content">
+                            <div class="contact-item2__label">Основной телефон</div>
+                            <a href="tel:89200521982" class="contact-item2__link">8 (920) 052-19-82</a>
+                            <div class="contact-item2__note mt-4">Для консультаций и заявок</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-card__section mb-0">
+                    <h2 class="contact-card__title">
+                        <i class="fas fa-envelope"></i>
+                        Электронная почта
+                    </h2>
+                    <div class="contact-item2">
+                        <div class="contact-item2__icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <div class="contact-item2__content">
+                            <div class="contact-item2__label">Для коммерческих предложений</div>
+                            <a href="mailto:nn.glazunov@yandex.ru" class="contact-item2__link">nn.glazunov@yandex.ru</a>
                         </div>
                     </div>
                 </div>
@@ -193,54 +123,19 @@
         </div>
     </section>
 
-
+    <!-- Разделитель -->
+    <div class="contact-content__container">
+        <div class="contact-content__divider"></div>
+    </div>
 
     <!-- Форма обратной связи -->
+    @@include('../components/_feedback.html', {
+    "title": "Остались вопросы?",
+    "disk": "Заполните форму и мы свяжемся с вами в течение 30 минут"
+    })
 
 
 
-    <!-- Дополнительная информация -->
-    <section class="additional-info">
-        <div class="container">
-            <div class="info-cards">
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3 class="info-title">Как нас найти</h3>
-                    <p class="info-text">Наш офис расположен в селе Зарубино, Городецкого района. Для навигации используйте координаты: 56.6478° с.ш., 43.4724° в.д.</p>
-                    <a href="#" class="info-link">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span>Открыть в Яндекс.Картах</span>
-                    </a>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3 class="info-title">Документы и лицензии</h3>
-                    <p class="info-text">Вся деятельность осуществляется в соответствии с законодательством РФ. Имеются все необходимые лицензии и разрешения.</p>
-                    <a href="#" class="info-link">
-                        <i class="fas fa-download"></i>
-                        <span>Скачать документы</span>
-                    </a>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="info-title">Сотрудничество</h3>
-                    <p class="info-text">Мы открыты к сотрудничеству с подрядчиками и партнерами. Предлагаем выгодные условия для строительных компаний.</p>
-                    <a href="mailto:partner@bur-52.ru" class="info-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>Написать о сотрудничестве</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 </main>
 
 @@include('../components/_footer.html')
