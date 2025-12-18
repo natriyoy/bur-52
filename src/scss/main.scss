@@ -25,7 +25,7 @@
 @use 'components/pod_kluch';
 @use 'components/about2';
 @use 'components/header2';
-
+@use 'components/feedback';
 
 :root {
   //--lazur: #ae2727;
@@ -43,6 +43,14 @@
     --text-color: #ffffff;
     --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
+}
+
+.block {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 60, 120, 0.08);
+  border: 1px solid #e2e8f0;
 }
 
 body {
