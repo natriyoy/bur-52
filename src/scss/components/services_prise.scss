@@ -241,6 +241,7 @@
 /* Блок преимуществ */
 .advantages-section2 {
   padding: 50px;
+
   margin-bottom: 30px;
 }
 
@@ -256,6 +257,7 @@
 .advantages-grid2 {
   display: flex;
   flex-wrap: wrap;
+
   margin: 0 -20px;
 }
 
@@ -304,7 +306,7 @@
   background: linear-gradient(135deg, var(--lazur) 0%, #1a4a8a 100%);
   border-radius: 20px;
   color: white;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .cta-title {
@@ -360,11 +362,11 @@
 
 /* Планшеты горизонтально (992px - 1200px) */
 @media (max-width: 1200px) {
-  .services-grid-item {
+  .services-grid-item2 {
     width: 50%; /* 2 карточки в ряд */
   }
 
-  .advantages-grid-item {
+  .advantages-grid-item2 {
     width: 50%; /* 2 в ряд */
   }
 
@@ -383,8 +385,9 @@
     font-size: 2.2rem;
   }
 
-  .advantages-section {
+  .advantages-section2 {
     padding: 40px 30px;
+
   }
 
   .cta-section {
@@ -432,16 +435,17 @@
     padding-right: 20px;
   }
 
-  .advantages-grid {
+  .advantages-grid2 {
     margin: 0 -10px;
+
   }
 
-  .advantages-grid-item {
+  .advantages-grid-item2 {
     width: 100%; /* 1 в ряд */
     padding: 0 10px 25px 10px;
   }
 
-  .advantage-icon {
+  .advantage-icon2 {
     width: 70px;
     height: 70px;
 
@@ -451,13 +455,13 @@
     }
   }
 
-  .advantages-section {
+  .advantages-section2 {
     padding: 30px 20px;
     border-radius: 15px;
     margin-bottom: 40px;
   }
 
-  .advantages-title {
+  .advantages-title2 {
     font-size: 1.8rem;
     margin-bottom: 30px;
   }
@@ -469,7 +473,7 @@
     width: 100%; /* Всегда 1 карточка в ряд */
   }
 
-  .advantages-grid-item {
+  .advantages-grid-item2 {
     width: 100%;
   }
 }
@@ -505,11 +509,11 @@
     font-size: 0.85rem;
   }
 
-  .advantage-title {
+  .advantage-title2 {
     font-size: 1.2rem;
   }
 
-  .advantage-description {
+  .advantage-description2 {
     font-size: 0.9rem;
   }
 
@@ -584,7 +588,7 @@
     width: 50%;
   }
 
-  .advantages-grid-item {
+  .advantages-grid-item2 {
     width: 50%;
   }
 }
@@ -614,14 +618,4 @@
   }
 }
 
-/* Планшеты в альбомной ориентации */
-@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-  .services-grid-item {
-    width: 50%; /* 2 в ряд */
-  }
-
-  .advantages-grid-item {
-    width: 50%; /* 2 в ряд */
-  }
-}
 

@@ -68,7 +68,10 @@
     }
   }
 }
-
+.fas {
+  width: 20px;
+  height: 20px;
+}
 /* ===== КОНТАКТНЫЕ ЭЛЕМЕНТЫ ===== */
 .contact-item2 {
   display: grid;
@@ -79,7 +82,7 @@
   background: rgba(39, 100, 174, 0.03);
   border-radius: 12px;
   border: 1px solid rgba(39, 100, 174, 0.08);
-
+align-items: center;
   &:last-child {
     margin-bottom: 0;
   }
@@ -99,7 +102,8 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+
+
   }
 
   &__label {

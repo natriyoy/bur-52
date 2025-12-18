@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 60px;
+
 }
 
 .about-section {
@@ -158,10 +158,14 @@
 
 .contact-details__item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 25px;
   padding-bottom: 25px;
   border-bottom: 1px solid var(--gagat2);
+  .dil {
+    color: var(--lazur);
+    margin: 10px;
+  }
 }
 
 .contact-details__item:last-child {
@@ -171,12 +175,11 @@
 }
 
 .contact-details__icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 15px;
-  flex-shrink: 0;
+margin-top: auto;
+  align-items: center;
+margin-bottom: auto;
   color: var(--lazur);
-  font-size: 1.2rem;
+
 }
 
 .contact-details__content h4 {

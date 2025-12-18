@@ -154,13 +154,14 @@ color: white;
 }
 
 .contacts-hero2 {
-  background: linear-gradient(135deg, rgba(39, 100, 174, 0.9) 0%, rgba(26, 74, 138, 0.95) 100%),
-  url('../images/contact-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(39, 100, 174, 0.9) 0%, rgba(26, 74, 138, 0.95) 100%);
+  border: none;
   padding: 0 0 100px;
   color: var(--white);
   text-align: center;
   position: relative;
   overflow: hidden;
+
   @media (max-width: 810px) {
     padding: 0 0 10px;
 
@@ -172,10 +173,12 @@ color: white;
   bottom: 0;
   left: 0;
   width: 100%;
+  border: none; /* Подсветим псевдоэлемент */
 
-  height: 100px;
+  height: 101px;
   background: var(--color-body);
   clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+  transform: translateY(1px);
   @media (max-width: 810px) {
     width: 0;
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0%);

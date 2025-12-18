@@ -63,9 +63,8 @@
   color: white;
   transition: all 0.3s ease;
 }
-
 .social-link:hover {
-  background: var(--lazur);
+  background: #0077FF;
   transform: translateY(-3px);
 }
 
@@ -73,6 +72,49 @@
   width: 20px;
   height: 20px;
 }
+
+.social-link2 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+.social-link2:hover {
+  background: #2AABEE;
+  transform: translateY(-3px);
+}
+
+.social-link2 svg {
+  width: 20px;
+  height: 20px;
+}
+
+.gol {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+.gol:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+.gol svg {
+  width: 20px;
+  height: 20px;
+}
+
+
 
 .footer-title {
 
@@ -134,7 +176,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: var(--lazur);
+  color: white;
   font-size: 1.1rem;
 }
 
