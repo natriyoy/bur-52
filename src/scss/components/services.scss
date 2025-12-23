@@ -47,7 +47,7 @@
 }
 
 .services-nav__link {
-  color: var(--gagat);
+  color: var(--zag);
   text-decoration: none;
   font-weight: 500;
   padding: 10px 20px;
@@ -58,7 +58,7 @@
 
 .services-nav__link:hover {
   background-color: var(--gagat2);
-  color: var(--lazur);
+
 }
 
 .services-nav__link.active {
@@ -96,7 +96,7 @@
 
 .service-detail__title {
   font-size: 2rem;
-  color: var(--gagat);
+  color: var(--zag);
   margin-bottom: 15px;
 }
 
@@ -116,13 +116,13 @@
   content: '';
   width: 8px;
   height: 8px;
-  background-color: var(--lazur);
+  background-color: var(--tex);
   border-radius: 50%;
 }
 
-.service-detail__price {
+.service-detail__price  {
   font-weight: bold;
-  color: var(--lazur);
+  color: var(--tex);
   font-size: 1.2rem;
 }
 
@@ -130,7 +130,11 @@
   display: flex;
   gap: 40px;
 }
-
+.service-detail__guarantee {
+  font-weight: bold;
+  color: var(--tex);
+  font-size: 1.2rem;
+}
 @media (max-width: 992px) {
   .service-detail__content {
     flex-direction: column;
@@ -163,17 +167,17 @@
 }
 
 .service-detail__features {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+
   border-radius: 20px;
   overflow: hidden;
   padding: 25px;
   box-shadow: 0 15px 40px rgba(0, 60, 120, 0.08);
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--lazur);
   margin-bottom: 20px;
 }
 
 .service-detail__features h3 {
-  color: var(--gagat);
+  color: var(--zag);
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
@@ -183,7 +187,9 @@
   padding: 0;
   margin: 0;
 }
-
+.service-detail__features li {
+  color: var(--tex);
+}
 .service-detail__features ul li {
   padding-left: 24px;
   margin-bottom: 10px;
@@ -205,7 +211,7 @@
 
 .service-detail__description h3,
 .service-detail__process h3 {
-  color: var(--gagat);
+  color: var(--zag);
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
@@ -213,7 +219,7 @@
 .service-detail__description p,
 .service-detail__process p {
   line-height: 1.6;
-  color: #666;
+  color: var(--tex);
   margin-bottom: 15px;
 }
 
@@ -231,7 +237,7 @@
 .service-detail__process ol li {
   margin-bottom: 8px;
   line-height: 1.6;
-  color: #666;
+  color: var(--tex);
 }
 
 .service-detail__cta {
@@ -254,7 +260,7 @@
 
 /* CTA блок в конце */
 .services-cta-block {
-  background-color: var(--lazur);
+  background: var(--grad);
   border-radius: 15px;
   padding: 60px 40px;
   text-align: center;

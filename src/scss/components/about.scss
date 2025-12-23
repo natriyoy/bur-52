@@ -27,7 +27,7 @@
 .about-section__title {
 
   font-size: 1.8rem;
-  color: var(--gagat);
+  color: var(--zag);
   margin-bottom: 25px;
   font-weight: 700;
   position: relative;
@@ -47,7 +47,7 @@
 .about-section__content {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: var(--gagat);
+  color: var(--tex);
 }
 
 .about-section__content p {
@@ -73,15 +73,9 @@
   border-radius: 12px;
   padding: 25px;
   text-align: center;
-  border: 1px solid var(--gagat2);
-  transition: all 0.3s ease;
+  border: 1px solid var(--lazur);
 }
 
-.advantage-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(39, 100, 174, 0.1);
-  border-color: var(--lazur);
-}
 
 .advantage-icon {
   width: 60px;
@@ -100,14 +94,14 @@
 .advantage-title {
 
   font-size: 1.2rem;
-  color: var(--gagat);
+  color: var(--zag);
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .advantage-description {
   font-size: 0.95rem;
-  color: #666;
+  color: var(--tex);
   line-height: 1.5;
 }
 
@@ -145,7 +139,7 @@
 .contact-info__title {
 
   font-size: 1.8rem;
-  color: var(--gagat);
+  color: var(--zag);
   margin-bottom: 30px;
   font-weight: 700;
 }
@@ -185,13 +179,13 @@ margin-bottom: auto;
 .contact-details__content h4 {
 
   font-size: 1.1rem;
-  color: var(--gagat);
+  color: var(--tex);
   margin-bottom: 8px;
   font-weight: 600;
 }
 
 .contact-details__content p {
-  color: var(--gagat);
+  color: var(--tex);
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
@@ -214,7 +208,7 @@ margin-bottom: auto;
 .cta-section {
   text-align: center;
   padding: 60px 40px;
-  background: linear-gradient(135deg, var(--lazur) 0%, #1a4a8a 100%);
+  background: var(--grad);
   border-radius: 20px;
   color: white;
   margin-top: 40px;

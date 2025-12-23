@@ -98,31 +98,41 @@
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const burgerToggle = document.getElementById('burgerToggle');
-    const burgerModal = document.getElementById('burgerModal');
-    const burgerClose = document.getElementById('burgerClose');
-    const themeToggle = document.getElementById('themeToggle');
-    const themeToggleMobile = document.getElementById('themeToggleMobile');
+  // Получаем кнопку
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlElement = document.documentElement;
 
-    burgerToggle.addEventListener('click', function() {
-      burgerModal.classList.add('active');
-      burgerToggle.classList.add('active');
-    });
+  // Проверяем сохраненную тему при загрузке
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  htmlElement.setAttribute('data-theme', savedTheme);
 
-    burgerClose.addEventListener('click', function() {
-      burgerModal.classList.remove('active');
-      burgerToggle.classList.remove('active');
-    });
+  // Функция переключения темы
+  function toggleTheme() {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-    burgerModal.addEventListener('click', function(e) {
-      if (e.target === burgerModal) {
-        burgerModal.classList.remove('active');
-        burgerToggle.classList.remove('active');
-      }
-    });
+    // Применяем новую тему
+    htmlElement.setAttribute('data-theme', newTheme);
+
+    // Сохраняем в localStorage
+    localStorage.setItem('theme', newTheme);
+
+    // Добавляем анимацию вращения
+    themeToggle.classList.add('rotate');
+    setTimeout(() => {
+      themeToggle.classList.remove('rotate');
+    }, 500);
+  }
+
+  // Вешаем обработчик клика
+  themeToggle.addEventListener('click', toggleTheme);
+
+  // Также можно переключать по клавише (опционально)
+  document.addEventListener('keydown', (e) => {
+    if (e.altKey && e.key === 't') { // Alt + T
+      toggleTheme();
+    }
   });
-
 </script>
 
 <section id="calculator" class="calculator-section">
@@ -252,8 +262,8 @@
                         <p><strong>Важно:</strong> Это предварительный расчет. Точная стоимость будет определена после выезда специалиста на участок.</p>
                     </div>
 <div style="display: flex; gap: 10px;">
-                    <button class="btn btn-primary btn-block" id="calculateBtn">Получить точный расчет</button>
-                    <a href="#zayvka" class="btn btn-primary btn-block">Подать заявку</a>
+                    <button class="btn btn-secondary" id="calculateBtn">Получить точный расчет</button>
+                    <a href="#zayvka" class="btn btn-secondary">Подать заявку</a>
                 </div>
                 </div>
             </div>
@@ -272,7 +282,7 @@
   <h2 class="section-title">Напишите нам</h2>
   <p class="section-description22">Заполните форму ниже и наш специалист свяжется с вами в течение 30 минут для бесплатной консультации и расчета стоимости</p>
 </div>
-        <div class="form-container">
+        <div class="form-container block">
 
 
 
@@ -283,25 +293,25 @@
                 <div class="form-benefits">
                     <div class="benefit-item">
                         <div class="benefit-icon">✓</div>
-                        <div class="benefit-content">
+                        <div class="benefit-content2">
                             <strong>Бесплатная консультация</strong>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-icon">✓</div>
-                        <div class="benefit-content">
+                        <div class="benefit-content2">
                             <strong>Расчет стоимости под ключ</strong>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-icon">✓</div>
-                        <div class="benefit-content">
+                        <div class="benefit-content2">
                             <strong>Выезд специалиста на участок</strong>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-icon">✓</div>
-                        <div class="benefit-content">
+                        <div class="benefit-content2">
                             <strong>Гарантия на все работы</strong>
                         </div>
                     </div>
@@ -492,7 +502,7 @@
       <div class="footer-links">
         <a href="privacy.html" class="footer-link">Политика конфиденциальности</a>
         <a href="agreement.html" class="footer-link">Пользовательское соглашение</a>
-        <a href="sitemap.html" class="footer-link">Карта сайта</a>
+        <a href="2site1.html" class="footer-link">Карта сайта</a>
       </div>
     </div>
   </div>

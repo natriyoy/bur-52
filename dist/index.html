@@ -99,31 +99,41 @@
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const burgerToggle = document.getElementById('burgerToggle');
-    const burgerModal = document.getElementById('burgerModal');
-    const burgerClose = document.getElementById('burgerClose');
-    const themeToggle = document.getElementById('themeToggle');
-    const themeToggleMobile = document.getElementById('themeToggleMobile');
+  // Получаем кнопку
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlElement = document.documentElement;
 
-    burgerToggle.addEventListener('click', function() {
-      burgerModal.classList.add('active');
-      burgerToggle.classList.add('active');
-    });
+  // Проверяем сохраненную тему при загрузке
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  htmlElement.setAttribute('data-theme', savedTheme);
 
-    burgerClose.addEventListener('click', function() {
-      burgerModal.classList.remove('active');
-      burgerToggle.classList.remove('active');
-    });
+  // Функция переключения темы
+  function toggleTheme() {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-    burgerModal.addEventListener('click', function(e) {
-      if (e.target === burgerModal) {
-        burgerModal.classList.remove('active');
-        burgerToggle.classList.remove('active');
-      }
-    });
+    // Применяем новую тему
+    htmlElement.setAttribute('data-theme', newTheme);
+
+    // Сохраняем в localStorage
+    localStorage.setItem('theme', newTheme);
+
+    // Добавляем анимацию вращения
+    themeToggle.classList.add('rotate');
+    setTimeout(() => {
+      themeToggle.classList.remove('rotate');
+    }, 500);
+  }
+
+  // Вешаем обработчик клика
+  themeToggle.addEventListener('click', toggleTheme);
+
+  // Также можно переключать по клавише (опционально)
+  document.addEventListener('keydown', (e) => {
+    if (e.altKey && e.key === 't') { // Alt + T
+      toggleTheme();
+    }
   });
-
 </script>
 <section id="home" class="hero">
   <img src="./assets/images/hello.webp" alt="Бурение скважин" class="hero-bg" width="100%" height="100%">
@@ -309,7 +319,7 @@
 </div>
         <div class="stages-timeline">
             
-            <div class="stage-item">
+            <div class="stage-item block">
                 <div class="stage-item__number">01</div>
                 <div class="stage-item__content">
                     <h3 class="stage-item__title">Выезд специалиста для оценки участка</h3>
@@ -323,7 +333,7 @@
             </div>
 
             
-            <div class="stage-item">
+            <div class="stage-item block">
                 <div class="stage-item__number">02</div>
                 <div class="stage-item__content">
                     <h3 class="stage-item__title">Подготовка оборудования</h3>
@@ -338,7 +348,7 @@
 
 
             
-            <div class="stage-item">
+            <div class="stage-item block">
                 <div class="stage-item__number">03</div>
                 <div class="stage-item__content">
                     <h3 class="stage-item__title">Непосредственно бурение скважины</h3>
@@ -352,7 +362,7 @@
             </div>
 
             
-            <div class="stage-item">
+            <div class="stage-item block">
                 <div class="stage-item__number">04</div>
                 <div class="stage-item__content">
                     <h3 class="stage-item__title">Техническое обслуживание</h3>
@@ -366,7 +376,7 @@
             </div>
 
             
-            <div class="stage-item">
+            <div class="stage-item block">
                 <div class="stage-item__number">05</div>
                 <div class="stage-item__content">
                     <h3 class="stage-item__title">Гарантия качества</h3>
@@ -404,7 +414,7 @@
                         <span class="label-value"><span id="miniDepthDisplay">50</span> м</span>
                     </div>
                     <div class="range-slider">
-                        <input type="range" id="miniDepthRange" min="10" max="200" value="50" step="10" class="slider">
+                        <input type="range" id="miniDepthRange" min="10" max="200" value="0" step="10" class="slider">
                         <div class="slider-ticks">
                             <span>10м</span>
                             <span>100м</span>
@@ -443,14 +453,13 @@
                             <span class="mini-estimate-price" id="miniTotalPrice">125 000 ₽</span>
                         </div>
                         <div class="mini-result-note">
-                            <span class="note-icon">ℹ️</span>
                             <span class="note-text">Это предварительный расчет</span>
                         </div>
                     </div>
 
                     <div class="mini-calculator-actions">
                         <a href="calculator.html" class="btn btn-secondary">Подробный расчет</a>
-                        <a href="services_prise.html#zayvka" class="btn btn-primary">Заказать выезд специалиста</a>
+                        <a href="services_prise.html#zayvka" class="btn btn-secondary">Заказать выезд специалиста</a>
                     </div>
 
                     <div class="mini-notice">
@@ -470,7 +479,7 @@
   <h2 class="section-title">Напишите нам</h2>
   <p class="section-description22">Заполните форму ниже и наш специалист свяжется с вами в течение 30 минут для бесплатной консультации и расчета стоимости</p>
 </div>
-        <div class="form-container">
+        <div class="form-container block">
 
 
 
@@ -481,25 +490,25 @@
                 <div class="form-benefits">
                     <div class="benefit-item">
                         <div class="benefit-icon">✓</div>
-                        <div class="benefit-content">
+                        <div class="benefit-content2">
                             <strong>Бесплатная консультация</strong>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-icon">✓</div>
-                        <div class="benefit-content">
+                        <div class="benefit-content2">
                             <strong>Расчет стоимости под ключ</strong>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-icon">✓</div>
-                        <div class="benefit-content">
+                        <div class="benefit-content2">
                             <strong>Выезд специалиста на участок</strong>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-icon">✓</div>
-                        <div class="benefit-content">
+                        <div class="benefit-content2">
                             <strong>Гарантия на все работы</strong>
                         </div>
                     </div>
@@ -690,7 +699,7 @@
       <div class="footer-links">
         <a href="privacy.html" class="footer-link">Политика конфиденциальности</a>
         <a href="agreement.html" class="footer-link">Пользовательское соглашение</a>
-        <a href="sitemap.html" class="footer-link">Карта сайта</a>
+        <a href="2site1.html" class="footer-link">Карта сайта</a>
       </div>
     </div>
   </div>

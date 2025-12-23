@@ -40,13 +40,13 @@
 .label-text {
 
   font-size: 1.2rem;
-  color: var(--gagat); /* фирменный темно-серый */
+  color: var(--zag); /* фирменный темно-серый */
   font-weight: 600;
 }
 
 .label-text-small {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--tex);
   margin-left: 10px;
 }
 
@@ -94,7 +94,7 @@
   justify-content: space-between;
   margin-top: 15px;
   font-size: 0.9rem;
-  color: var(--gagat); /* фирменный темно-серый */
+  color: var(--tex); /* фирменный темно-серый */
 }
 
 .slider-ticks span {
@@ -131,8 +131,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 16px 20px;
-  background: white;
   border: 2px solid var(--gagat2); /* полупрозрачный темно-серый */
   border-radius: 10px;
   cursor: pointer;
@@ -146,7 +146,7 @@
 
 .radio-text {
   font-weight: 500;
-  color: var(--gagat); /* фирменный темно-серый */
+  color: var(--tex); /* фирменный темно-серый */
 }
 
 .radio-price {
@@ -178,7 +178,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px 20px;
-  background: white;
+
   border: 2px solid var(--gagat2); /* полупрозрачный темно-серый */
   border-radius: 10px;
   cursor: pointer;
@@ -192,7 +192,7 @@
 
 .checkbox-text {
   font-weight: 500;
-  color: var(--gagat); /* фирменный темно-серый */
+  color: var(--tex); /* фирменный темно-серый */
 }
 
 .checkbox-price {
@@ -219,7 +219,7 @@
 .result-title {
 
   font-size: 1.4rem;
-  color: var(--gagat); /* фирменный темно-серый */
+  color: var(--zag); /* фирменный темно-серый */
   font-weight: 600;
 }
 
@@ -238,7 +238,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  color: var(--gagat); /* фирменный темно-серый */
+  color: var(--tex); /* фирменный темно-серый */
   font-size: 0.95rem;
   opacity: 0.8;
 }
@@ -252,15 +252,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 0 0;
-  margin-top: 15px;
-  border-top: 2px solid rgba(39, 100, 174, 0.2); /* lazur с прозрачностью */
+
+
   font-weight: 700;
-  color: var(--gagat); /* фирменный темно-серый */
+  color: var(--lazur); /* фирменный темно-серый */
   font-size: 1.1rem;
 }
 
 .result-notice {
-  background: white;
+
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 25px;
@@ -270,7 +270,7 @@
 .result-notice p {
   margin: 0;
   font-size: 0.9rem;
-  color: var(--gagat); /* фирменный темно-серый */
+  color: var(--tex); /* фирменный темно-серый */
   line-height: 1.5;
   opacity: 0.8;
 }

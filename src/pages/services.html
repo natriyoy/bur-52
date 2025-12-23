@@ -16,7 +16,7 @@
         "title": "Все услуги",
         "description": "Полный спектр услуг по водоснабжению от проектирования до обслуживания"
         })
-        <nav class="services-nav">
+        <nav class="services-nav block">
             <ul class="services-nav__list">
                 <li><a href="#drilling" class="services-nav__link">Бурение скважин</a></li>
                 <li><a href="#pump" class="services-nav__link">Монтаж насосов</a></li>
@@ -26,7 +26,7 @@
         </nav>
 
         <!-- Раздел 1: Бурение скважин -->
-        <section id="drilling" class="service-detail">
+        <section id="drilling" class="service-detail block">
             <div class="service-detail__header">
                 <span class="service-detail__number">01</span>
                 <h2 class="service-detail__title">Бурение скважин на воду</h2>
@@ -87,7 +87,7 @@
         </section>
 
         <!-- Раздел 2: Монтаж насосного оборудования -->
-        <section id="pump" class="service-detail">
+        <section id="pump" class="service-detail block">
             <div class="service-detail__header">
                 <span class="service-detail__number">02</span>
                 <h2 class="service-detail__title">Монтаж насосного оборудования</h2>
@@ -101,7 +101,7 @@
             <div class="service-detail__content">
                 <div class="service-detail__left">
                     <div class="service-detail__image">
-                        <img src="https://placehold.co/600x300/2a9d8f/ffffff?text=Монтаж+насоса" alt="Монтаж насоса">
+                        <img src="./assets/images/IMG20190801112509.webp" alt="Бурение скважины">
                     </div>
 
                     <div class="service-detail__features">
@@ -133,7 +133,7 @@
         </section>
 
         <!-- Раздел 3: Чистка и ремонт -->
-        <section id="cleaning" class="service-detail">
+        <section id="cleaning" class="service-detail block">
             <div class="service-detail__header">
                 <span class="service-detail__number">03</span>
                 <h2 class="service-detail__title">Чистка и ремонт скважин</h2>
@@ -147,7 +147,7 @@
             <div class="service-detail__content">
                 <div class="service-detail__left">
                     <div class="service-detail__image">
-                        <img src="https://placehold.co/600x300/2a9d8f/ffffff?text=Чистка+скважины" alt="Чистка скважины">
+                        <img src="./assets/images/IMG20190801112509.webp" alt="Бурение скважины">
                     </div>
 
                     <div class="service-detail__features">
@@ -192,7 +192,7 @@
         </section>
 
         <!-- Раздел 4: Обустройство скважины -->
-        <section id="equipment" class="service-detail">
+        <section id="equipment" class="service-detail block">
             <div class="service-detail__header">
                 <span class="service-detail__number">04</span>
                 <h2 class="service-detail__title">Обустройство скважины</h2>
@@ -205,7 +205,7 @@
             <div class="service-detail__content">
                 <div class="service-detail__left">
                     <div class="service-detail__image">
-                        <img src="https://placehold.co/600x300/2a9d8f/ffffff?text=Обустройство+скважины" alt="Обустройство скважины">
+                        <img src="./assets/images/IMG20190801112509.webp" alt="Бурение скважины">
                     </div>
 
                     <div class="service-detail__features">
@@ -248,7 +248,8 @@
                 </div>
             </div>
         </section>
-        <section id="industrial" class="service-detail">
+
+        <section id="industrial" class="service-detail block">
             <div class="service-detail__header">
                 <span class="service-detail__number">05</span>
                 <h2 class="service-detail__title">Промышленные скважины</h2>
@@ -262,7 +263,7 @@
             <div class="service-detail__content">
                 <div class="service-detail__left">
                     <div class="service-detail__image">
-                        <img src="https://placehold.co/600x300/2a9d8f/ffffff?text=Промышленная+скважина" alt="Промышленная скважина">
+                        <img src="./assets/images/IMG20190801112509.webp" alt="Бурение скважины">
                     </div>
 
                     <div class="service-detail__features">
@@ -312,7 +313,7 @@
         </section>
 
         <!-- Раздел 6: Консультация специалиста -->
-        <section id="consultation" class="service-detail">
+        <section id="consultation" class="service-detail block">
             <div class="service-detail__header">
                 <span class="service-detail__number">06</span>
                 <h2 class="service-detail__title">Консультация специалиста</h2>
@@ -326,7 +327,7 @@
             <div class="service-detail__content">
                 <div class="service-detail__left">
                     <div class="service-detail__image">
-                        <img src="https://placehold.co/600x300/2a9d8f/ffffff?text=Консультация+специалиста" alt="Консультация специалиста">
+                        <img src="./assets/images/IMG20190801112509.webp" alt="Бурение скважины">
                     </div>
 
                     <div class="service-detail__features">
@@ -375,14 +376,10 @@
                 </div>
             </div>
         </section>
-        <!-- CTA блок в конце -->
-        <section class="services-cta-block">
-            <div class="cta-content">
-                <h2>Нужна консультация?</h2>
-                <p>Наши специалисты помогут подобрать оптимальное решение для вашего участка</p>
-                <a href="#contact" class="cta-button">Бесплатная консультация</a>
-            </div>
-        </section>
+        @@include('../components/_cta.html', {
+        "title": "Нужна консультация по бурению скважины?",
+        "disk": "Наши специалисты помогут подобрать оптимальное решение для вашего участка"
+        })
     </div>
 </main>
 <div style="margin-bottom: 20px">

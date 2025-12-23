@@ -38,7 +38,7 @@ header {
         padding: 10px 20px;
 
         text-decoration: none;
-        color: var(--light);
+        color: white;
         font-weight: bold;
         border-radius: 25px;
         transition: all 0.3s ease;
@@ -154,7 +154,7 @@ color: white;
 }
 
 .contacts-hero2 {
-  background: linear-gradient(135deg, rgba(39, 100, 174, 0.9) 0%, var(--lazur) 100%);
+  background: var(--grad);
   border: none;
   padding: 0 0 100px;
   color: var(--white);

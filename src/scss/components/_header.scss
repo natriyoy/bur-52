@@ -1,7 +1,4 @@
 header {
-  body.light-theme & {
-    color: var(--dark);
-  }
   z-index: 1000;
 
   .nav {
@@ -36,17 +33,12 @@ header {
       }
       .nav-menu-cl {
         padding: 10px 20px;
-
         text-decoration: none;
-        color: var(--light);
+        color: var(--zag);
         font-weight: bold;
         border-radius: 25px;
         transition: all 0.3s ease;
         cursor: pointer;
-
-        body.light-theme & {
-          color: #333333;
-        }
         &:hover {
           background: var(--gagat2);
           color: var(--lazur);

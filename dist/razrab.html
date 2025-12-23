@@ -150,31 +150,41 @@
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const burgerToggle = document.getElementById('burgerToggle');
-    const burgerModal = document.getElementById('burgerModal');
-    const burgerClose = document.getElementById('burgerClose');
-    const themeToggle = document.getElementById('themeToggle');
-    const themeToggleMobile = document.getElementById('themeToggleMobile');
+  // Получаем кнопку
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlElement = document.documentElement;
 
-    burgerToggle.addEventListener('click', function() {
-      burgerModal.classList.add('active');
-      burgerToggle.classList.add('active');
-    });
+  // Проверяем сохраненную тему при загрузке
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  htmlElement.setAttribute('data-theme', savedTheme);
 
-    burgerClose.addEventListener('click', function() {
-      burgerModal.classList.remove('active');
-      burgerToggle.classList.remove('active');
-    });
+  // Функция переключения темы
+  function toggleTheme() {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-    burgerModal.addEventListener('click', function(e) {
-      if (e.target === burgerModal) {
-        burgerModal.classList.remove('active');
-        burgerToggle.classList.remove('active');
-      }
-    });
+    // Применяем новую тему
+    htmlElement.setAttribute('data-theme', newTheme);
+
+    // Сохраняем в localStorage
+    localStorage.setItem('theme', newTheme);
+
+    // Добавляем анимацию вращения
+    themeToggle.classList.add('rotate');
+    setTimeout(() => {
+      themeToggle.classList.remove('rotate');
+    }, 500);
+  }
+
+  // Вешаем обработчик клика
+  themeToggle.addEventListener('click', toggleTheme);
+
+  // Также можно переключать по клавише (опционально)
+  document.addEventListener('keydown', (e) => {
+    if (e.altKey && e.key === 't') { // Alt + T
+      toggleTheme();
+    }
   });
-
 </script>
 <div class="container">
     <h1>Сравнение: системный Unageo vs наш Unageo2</h1>
@@ -383,7 +393,7 @@
       <div class="footer-links">
         <a href="privacy.html" class="footer-link">Политика конфиденциальности</a>
         <a href="agreement.html" class="footer-link">Пользовательское соглашение</a>
-        <a href="sitemap.html" class="footer-link">Карта сайта</a>
+        <a href="2site1.html" class="footer-link">Карта сайта</a>
       </div>
     </div>
   </div>

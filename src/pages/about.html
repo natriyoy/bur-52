@@ -148,17 +148,10 @@
         </ul>
       </section>
     </div>
-
-    <!-- CTA секция -->
-    <section class="cta-section">
-      <h2 class="cta-title">Нужна консультация по бурению скважины?</h2>
-      <p class="cta-description">Оставьте заявку и наш специалист свяжется с вами в течение 30 минут. Бесплатный выезд на участок для точного расчета стоимости.</p>
-
-      <div class="cta-buttons">
-        <a href="tel:89200521982" class="cta-btn primary">Позвонить: 8 (920) 052-19-82</a>
-        <a href="contact.html" class="cta-btn secondary">Оставить заявку онлайн</a>
-      </div>
-    </section>
+    @@include('../components/_cta.html', {
+    "title": "Нужна консультация по бурению скважины?",
+    "disk": "Оставьте заявку и наш специалист свяжется с вами в течение 30 минут. Бесплатный выезд на участок для точного расчета стоимости."
+    })
   </div>
   @@include('../components/_feedback.html', {
   "title": "Вопросы?",

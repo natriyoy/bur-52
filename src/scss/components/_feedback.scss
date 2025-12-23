@@ -26,13 +26,13 @@
 .form-title {
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--zag);
   margin-bottom: 15px;
 }
 
 .form-subtitle {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: var(--tex);
   margin-bottom: 30px;
   line-height: 1.6;
 }
@@ -43,17 +43,19 @@
   gap: 15px;
   margin-bottom: 40px;
 }
-
+.benefit-content2 {
+  color: var(--tex);
+}
 .benefit-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--text-dark);
+
   font-weight: 500;
 }
 
 .benefit-item i {
-  color: var(--success-green);
+
   font-size: 1.2rem;
 }
 
@@ -80,7 +82,7 @@
 
 .stat-text {
   font-size: 0.9rem;
-  color: var(--text-light);
+  color: var(--tex);
   font-weight: 500;
 }
 
@@ -100,7 +102,7 @@
   min-height: 500px;
   overflow: hidden;
   border-radius: 10px;
-
+  background: var(--grad-form);
 }
 
 .yandex-iframe {
