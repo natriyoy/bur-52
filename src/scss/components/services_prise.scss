@@ -120,7 +120,7 @@
 }
 
 .service-card__title {
-
+  font-family: manr, sans-serif;
   font-size: 1.4rem;
   color: var(--zag);
   margin-bottom: 15px;
@@ -286,13 +286,16 @@
 }
 
 .advantage-title2 {
-
+  font-family: manr, sans-serif;
   font-size: 1.3rem;
   color: var(--zag);
   margin-bottom: 10px;
   font-weight: 600;
 }
+.advantages-section2 h2 {
+  font-family: manr, sans-serif;
 
+}
 .advantage-description2 {
   color: var(--tex);
   line-height: 1.5;
@@ -310,7 +313,7 @@
 }
 
 .cta-title {
-
+  font-family: manr, sans-serif;
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: 700;

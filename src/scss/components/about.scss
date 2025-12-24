@@ -25,7 +25,7 @@
 }
 
 .about-section__title {
-
+  font-family: manr, sans-serif;
   font-size: 1.8rem;
   color: var(--zag);
   margin-bottom: 25px;
@@ -92,7 +92,7 @@
 }
 
 .advantage-title {
-
+  font-family: manr, sans-serif;
   font-size: 1.2rem;
   color: var(--zag);
   margin-bottom: 10px;
@@ -142,6 +142,7 @@
   color: var(--zag);
   margin-bottom: 30px;
   font-weight: 700;
+  font-family: manr, sans-serif;
 }
 
 .contact-details {
@@ -179,7 +180,7 @@ margin-bottom: auto;
 .contact-details__content h4 {
 
   font-size: 1.1rem;
-  color: var(--tex);
+  color: var(--zag);
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -189,19 +190,19 @@ margin-bottom: auto;
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
-  opacity: 0.9;
+
 }
 
 .contact-details__link {
-  color: var(--lazur);
+  color: var(--tex);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .contact-details__link:hover {
-  text-decoration: underline;
-  color: var(--gagat);
+  color: var(--lazur);
+  text-decoration: none;
 }
 
 /* Кнопка CTA */
