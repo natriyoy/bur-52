@@ -153,7 +153,21 @@
   .services-section {
     padding: 60px 15px;
   }
+  .service-card:hover {
+    transform: translateY(0px);
 
+  }
+  .service-card__button{
+    background-color: var(--lazur);
+    color: white;
+  }
+  .service-card__icon svg {
+    display: block;
+
+  }
+  .service-card:hover .service-card__icon svg {
+    transform: scale(1);
+  }
   .section-header {
     margin-bottom: 40px;
   }
@@ -175,6 +189,7 @@
     max-width: 500px;
     margin: 0 auto;
     padding: 25px;
+    text-align: center;
   }
 
   .service-card__title {
@@ -193,10 +208,18 @@
   .services-footer {
     margin-top: 40px;
   }
-
+.service-card__icon {
+  margin-right: auto;
+  margin-left: auto;
+}
   .services-cta {
     padding: 14px 28px;
     font-size: 1rem;
+
+  }
+  .services-cta:hover {
+    background-color: var(--lazur);
+    color: white;
   }
 }
 

@@ -298,7 +298,15 @@
   .timing-info {
     grid-template-columns: 1fr;
   }
-
+  .action-button:hover {
+    background: none;
+    color: white;
+    transform: translateY(0px);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+  }
+  .action-button:hover .action-button__icon {
+    transform: translateX(0px);
+  }
   .price-display__amount {
     font-size: 36px;
   }

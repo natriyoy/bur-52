@@ -238,7 +238,7 @@
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 1rem;
+
   transition: all 0.3s ease;
   border: 2px solid;
 
@@ -256,19 +256,7 @@
   box-shadow: 0 5px 15px rgba(39, 100, 174, 0.2);
 }
 
-.btn-secondary {
-  background-color: white;
-  border-color: var(--gagat);
-  color: var(--gagat);
-}
 
-.btn-secondary:hover {
-  background-color: var(--lazur);
-  color: white;
-  border-color: var(--lazur);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(60, 60, 59, 0.1);
-}
 
 .mini-notice {
   padding: 12px 16px;
@@ -295,7 +283,25 @@
   .mini-calculator-section {
     padding: 50px 0;
   }
+  .mini-calculator-actions {
+    font-size: 10px;
+  }
 
+  .btn-secondary {
+    font-size: 10px;
+    background-color: var(--lazur);
+    color: white;
+    border-color: var(--lazur);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(60, 60, 59, 0.1);
+  }
+  .btn-secondary:hover {
+    background-color: var(--lazur);
+    color: white;
+    border-color: var(--lazur);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(60, 60, 59, 0.1);
+  }
   .section-title {
     font-size: 1.8rem;
   }
@@ -337,7 +343,7 @@
 
   .btn {
     padding: 12px;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
   }
 }
 

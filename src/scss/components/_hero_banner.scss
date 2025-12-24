@@ -99,7 +99,14 @@
   .hero {
     min-height: 50vh;
   }
-
+  .btn-secondary2 {
+    background-color: var(--knop2);
+    border: none;
+  }
+  .btn-secondary2:hover {
+    background-color: var(--knop2);
+    color: white;
+  }
   .hero h1 {
     font-size: 1.8rem;
   }

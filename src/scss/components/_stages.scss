@@ -119,6 +119,8 @@
   @media (max-width: 1024px) {
     .stage-item {
       padding: 20px 25px;
+      border: 1px solid rgba(60, 60, 59, 0.1);
+
 
       &__number {
         font-size: 2rem;
@@ -166,7 +168,11 @@
       flex-direction: column;
       padding: 25px;
       margin-bottom: 30px;
-
+      &:hover {
+        transform: translateX(0px);
+        box-shadow: 0 15px 40px rgba(0,0,0,.3);
+        border: 1px solid #4a5568;
+      }
       &__number {
         font-size: 1.8rem;
         margin-right: 0;
@@ -190,6 +196,8 @@
         align-self: flex-start;
         width: 50px;
         height: 50px;
+        margin-right: auto ;
+        margin-left: auto;
 
         svg {
           width: 25px;

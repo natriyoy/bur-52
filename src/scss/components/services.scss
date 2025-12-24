@@ -165,7 +165,10 @@
     height: 200px;
   }
 }
+.services-nav__link:hover {
+  background: none;
 
+}
 .service-detail__features {
 
   border-radius: 20px;
@@ -308,7 +311,15 @@
   .service-detail {
     padding: 25px;
   }
+  .service-detail__cta {
+    background-color: var(--lazur);
+    color: white;
+  }
 
+  .service-detail__cta:hover {
+    background-color: var(--lazur);
+    color: white;
+  }
   .service-detail__title {
     font-size: 1.6rem;
   }

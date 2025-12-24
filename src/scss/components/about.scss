@@ -283,7 +283,20 @@ margin-bottom: auto;
                 .about-page {
                   padding: 40px 0;
                 }
+  .cta-btn:hover {
+    transform: translateY(0px);
 
+  }
+  .region-badge {
+    background: var(--lazur);
+    color: white;
+
+  }
+
+  .region-badge:hover {
+    background: var(--lazur);
+    transform: translateY(0px);
+  }
                 .page-header {
                   margin-bottom: 40px;
                 }

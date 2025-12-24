@@ -404,7 +404,24 @@
   .services-page {
     padding: 40px 0;
   }
+  .cta-btn:hover {
+    transform: translateY(0px);
 
+  }
+
+  .service-card-full:hover {
+    transform: translateY(0px);
+
+  }
+  .service-card__btn {
+    background-color: transparent;
+    color: var(--lazur);
+  }
+
+  .service-card__btn:hover {
+    background-color: transparent;
+    color: var(--lazur);
+  }
   .page-header {
     margin-bottom: 40px;
   }
