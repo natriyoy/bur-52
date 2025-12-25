@@ -6,7 +6,6 @@
 
 .services-section {
   padding: 80px 20px;
-
 }
 
 .container {
@@ -15,12 +14,10 @@
   padding: 0 20px;
 }
 
-/* === Services Cards === */
 .services-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  justify-content: center;
 }
 
 .service-card {
@@ -87,8 +84,6 @@
   font-weight: 500;
   text-align: center;
   transition: all 0.3s ease;
-
-
 }
 
 .service-card__button:hover {
@@ -96,13 +91,11 @@
   color: white;
 }
 
-/* === Footer === */
 .services-footer {
   text-align: center;
   padding-top: 40px;
 
 }
-
 .services-note {
   color: #666;
   font-size: 1rem;
@@ -113,7 +106,6 @@
 }
 
 .services-cta {
-  display: inline-block;
   padding: 16px 32px;
   background-color: var(--lazur);
   color: white;
@@ -130,25 +122,6 @@
   color: var(--lazur);
 }
 
-/* === Адаптивность === */
-
-/* Планшеты: 768px — 1024px */
-@media (max-width: 1024px) {
-  .service-card {
-    flex: 1 1 calc(50% - 30px);
-    min-width: 320px;
-  }
-
-  .section-title {
-    font-size: 2.25rem;
-  }
-
-  .section-description {
-    font-size: 1.05rem;
-  }
-}
-
-/* Мобильные устройства: до 768px */
 @media (max-width: 768px) {
   .services-section {
     padding: 60px 15px;
@@ -185,8 +158,7 @@
   }
 
   .service-card {
-    flex: 1 1 100%;
-    max-width: 500px;
+
     margin: 0 auto;
     padding: 25px;
     text-align: center;
@@ -221,46 +193,5 @@
   .services-cta:hover {
     background-color: var(--lazur);
     color: white;
-  }
-}
-
-/* Мелкие телефоны: до 480px */
-@media (max-width: 480px) {
-  .services-section {
-    padding: 50px 12px;
-  }
-
-  .section-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .service-card {
-    padding: 20px;
-  }
-
-  .service-card__title {
-    font-size: 1.2rem;
-  }
-
-  .service-card__description {
-    font-size: 0.9rem;
-  }
-
-  .service-card__button {
-    padding: 9px 18px;
-    font-size: 0.9rem;
-  }
-
-  .services-note {
-    font-size: 0.95rem;
-  }
-
-  .services-cta {
-    padding: 12px 24px;
-    font-size: 0.95rem;
   }
 }
