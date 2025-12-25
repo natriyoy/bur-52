@@ -291,9 +291,13 @@
   .full-service-banner__benefits-grid {
     grid-template-columns: 1fr;
   }
-
+  .full-service-banner__label {
+    width: 100%;
+    text-align: center;
+  }
   .full-service-banner__heading {
     font-size: 28px;
+    text-align: center;
   }
 
   .timing-info {
@@ -314,6 +318,7 @@
 
   .full-service-banner__intro {
     max-width: 100%;
+    text-align: center;
   }
 }
 
